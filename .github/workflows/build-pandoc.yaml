@@ -6,7 +6,7 @@ on:
     branches: ["main"]
 jobs:
   build:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: docker://pandoc/extra
