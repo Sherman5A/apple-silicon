@@ -15,7 +15,6 @@ jobs:
           args: ">-
             -t latex
             -o output/report.pdf
-            --from-markdown
             --template /.pandoc/templates/eisvogel.latex
             --toc
             --listings
