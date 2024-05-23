@@ -1,0 +1,28 @@
+
+name: Build Pandoc PDF
+
+on: 
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubunut-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker://pandoc/extra
+        id: "Create PDF file"
+        with:
+          args: ">-
+            -t latex
+            -o output/report.pdf
+            --from-markdown
+            --template /.pandoc/templates/eisvogel.latex
+            --toc
+            --listings
+            report/report.md"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report-output
+          path: |
+            output/*.pdf
+
