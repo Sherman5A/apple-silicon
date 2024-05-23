@@ -12,13 +12,13 @@ jobs:
       - uses: docker://pandoc/extra
         id: create-pdf
         with:
-          args: ">-
+          args: >-
             -t latex
             -o output/report.pdf
             --template /.pandoc/templates/eisvogel.latex
             --toc
             --listings
-            report/report.md"
+            report/report.md
       - uses: actions/upload-artifact@v4
         id: upload-pdf
         with:
