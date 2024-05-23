@@ -9,12 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: mkdir output
       - uses: docker://pandoc/extra
         id: create-pdf
         with:
           args: >-
             -t latex
-            -o output/report.pdf
+            --output=output/report.pdf
             --template /.pandoc/templates/eisvogel.latex
             --toc
             --listings
