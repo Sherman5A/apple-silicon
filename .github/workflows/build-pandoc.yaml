@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: docker://pandoc/extra
-        id: "Create PDF file"
+        id: create-pdf
         with:
           args: ">-
             -t latex
@@ -21,6 +21,7 @@ jobs:
             --listings
             report/report.md"
       - uses: actions/upload-artifact@v4
+        id: 
         with:
           name: report-output
           path: |
