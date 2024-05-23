@@ -21,7 +21,7 @@ jobs:
             --listings
             report/report.md"
       - uses: actions/upload-artifact@v4
-        id: 
+        id: upload-pdf
         with:
           name: report-output
           path: |
