@@ -1,6 +1,7 @@
 
 build:
-	pandoc report.md -t latex --from markdown --template eisvogel --toc --listings -o report.pdf
+	mkdir -p output
+	pandoc report.md -t latex --from markdown --template eisvogel --toc --listings -o output/report.pdf
 clean:
-	rm report.pdf
+	rm -rf output
 
