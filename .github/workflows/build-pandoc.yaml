@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: report
       - run: |
-          cd ./report
           mkdir output
       - uses: docker://pandoc/extra
         id: create-pdf
         with:
-          workdir: ./report
           args: >-
             -t latex
             --from markdown
@@ -33,4 +33,3 @@ jobs:
           name: report-output
           path: |
             output/*.pdf
-
