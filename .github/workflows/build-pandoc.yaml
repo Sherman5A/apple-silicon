@@ -14,6 +14,7 @@ jobs:
           mkdir output
       - uses: docker://pandoc/extra
         id: create-pdf
+        run: cd report
         with:
           args: >-
             -t latex
@@ -22,10 +23,10 @@ jobs:
             --toc
             --listings
             --citeproc
-            --bibliography=report/references.bib
-            --output=output/report.pdf
-            --csl=report/university-of-south-wales-harvard.csl
-            report/report.md
+            --bibliography=references.bib
+            --output=report.pdf
+            --csl=university-of-south-wales-harvard.csl
+            ./report.md
       - uses: actions/upload-artifact@v4
         id: upload-pdf
         with:
