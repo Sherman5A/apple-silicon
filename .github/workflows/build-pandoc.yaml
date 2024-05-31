@@ -15,10 +15,13 @@ jobs:
         with:
           args: >-
             -t latex
-            --output=output/report.pdf
+            --from markdown
             --template /.pandoc/templates/eisvogel.latex
             --toc
             --listings
+            --citeproc
+            --bibliography=references.bib
+            --output=output/report.pdf
             report/report.md
       - uses: actions/upload-artifact@v4
         id: upload-pdf
