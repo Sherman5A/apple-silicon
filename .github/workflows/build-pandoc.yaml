@@ -15,7 +15,7 @@ jobs:
       - uses: docker://pandoc/extra
         id: create-pdf
         with:
-          context: report
+          workdir: ./report
           args: >-
             -t latex
             --from markdown
