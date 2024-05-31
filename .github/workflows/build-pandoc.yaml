@@ -26,10 +26,11 @@ jobs:
               --bibliography=references.bib \
               --template /.pandoc/templates/eisvogel.latex \
               --output=output/report.pdf
+            echo $(ls output)
       - uses: actions/upload-artifact@v4
         id: upload-pdf
         with:
           name: output
           path: |
-            output/*.pdf
+            report/output/*.pdf
 
