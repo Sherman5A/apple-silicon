@@ -1,4 +1,5 @@
-*.pdf
 *.log
 /output/
+*.pdf
+!report/title-background.pdf
 
