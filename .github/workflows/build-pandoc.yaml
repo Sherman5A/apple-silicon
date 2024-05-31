@@ -20,8 +20,9 @@ jobs:
             --toc
             --listings
             --citeproc
-            --bibliography=references.bib
+            --bibliography=report/references.bib
             --output=output/report.pdf
+            --csl=report/university-of-south-wales-harvard.csl
             report/report.md
       - uses: actions/upload-artifact@v4
         id: upload-pdf
