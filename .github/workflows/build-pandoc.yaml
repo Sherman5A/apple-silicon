@@ -1,35 +1,35 @@
-
 name: Build Pandoc PDF
-
 on: 
   push:
     branches: ["main"]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: shermankw/pandoc-alpine-eis:first-push
+      options: --entrypoint=sh
     steps:
       - uses: actions/checkout@v4
-        with:
-          sparse-checkout: report
-      - run: |
-          mkdir output
-      - uses: docker://pandoc/extra
+      - name: create pdf file
         id: create-pdf
-        with:
-          args: >-
-            -t latex
-            --from markdown
-            --template /.pandoc/templates/eisvogel.latex
-            --toc
-            --listings
-            --citeproc
-            --bibliography=references.bib
-            --output=report.pdf
-            --csl=university-of-south-wales-harvard.csl
-            ./report.md
+        run: |
+            cd report
+            mkdir output
+            echo $(ls)
+            echo $(pandoc -v)
+            pandoc report.md \
+              -t latex \
+              --from markdown \
+              --toc \
+              --listings \
+              --citeproc \
+              --bibliography=references.bib \
+              --template /.pandoc/templates/eisvogel.latex \
+              --output=output/report.pdf
       - uses: actions/upload-artifact@v4
         id: upload-pdf
         with:
-          name: report-output
+          name: output
           path: |
             output/*.pdf
+
