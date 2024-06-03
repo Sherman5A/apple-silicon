@@ -20,7 +20,6 @@ jobs:
             pandoc report.md \
               -t latex \
               --from markdown \
-              --toc \
               --listings \
               --citeproc \
               --bibliography=references.bib \
