@@ -2,7 +2,7 @@
 title: "IS1S482 A Review of Processor Technologies"
 author: [Jake Real - 23056792]
 date: "03/06/2024"
-toc-own-page: true
+toc-own-page: false
 titlepage: true
 titlepage-background: "title-background.pdf"
 bibliography: "references.bib"
