@@ -9,7 +9,6 @@ bibliography: "references.bib"
 csl: "university-of-south-wales-harvard.csl"
 nocite: |
 ...
----
 
 # Abstract
 
