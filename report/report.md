@@ -12,7 +12,7 @@ nocite: |
 
 # Abstract
 
-Apple announced their 2 year transition plan to internally-designed Apple
+Apple announced their two year transition plan to internally-designed Apple
 Silicon processors, ending the use of Intel x86-64 processors, at the
 World Wide Developers Conference 2020 [@apple-announcement]. This report will
 explore the transition's motives and results through investigating
@@ -30,18 +30,22 @@ documentation.
 All of the following processor families belong to two distinct computer architectures,
 reduced instruction set computers (RISC), and complex instruction set computers
 (CISC). These design philosophies affect the families architectures and
-operation greatly; therefore, the philosophies principles and differences must
-be explored to analyse the families details, differences, and practices.
+operation greatly; therefore, the two philosophies principles and differences must
+be explored to better analyse the families details, differences, and practices.
 
 As defined by John Mashey [-@risc-userpages], a contributor to the MIPS RISC
 architecture [@john-mashey], most RISC architectures have: a load then store
 architecture - 'no operations that combine load/store with arithmetic i.e., like
-add from memory, or add to memory', no more than 1 operand that accesses a
-memory address per instruction, standard fixed instruction sizes, and a small
-amount of address modes. Crucially, the number of instructions does not determine
-if a processor is RISC [@what-risc]
+add from memory, or add to memory', no more than one operand that accesses a
+memory address per instruction, standard fixed instruction sizes, simple
+encoding, and a small amount of address modes. Crucially, the number of
+instructions does not determine whether a processor is RISC. Instead, RISC is
+a loose set of architectures, sharing some of the above features, that aim to
+achieve efficient execution by a pipelined processor using an optimising
+compiler [@what-risc].
 
-**RISC is not inherently lower power, or a mobile ISA
+**RISC is not inherently lower power, or a mobile ISA. It is just collection of
+instruction set characterises .
 
 # PowerPC
 
