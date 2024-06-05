@@ -4,6 +4,7 @@ author: [Jake Real - 23056792]
 date: "03/06/2024"
 toc-own-page: false
 titlepage: true
+table-use-row-colors: true
 titlepage-background: "title-background.pdf"
 bibliography: "references.bib"
 csl: "university-of-south-wales-harvard.csl"
@@ -29,7 +30,7 @@ documentation.
 
 +------------+-------------------------------------------------+---------------------------------------------------------+
 |            | RISC                                            | CISC                                                    |
-+============+=================================================+=========================================================+
++============+:===============================================:+:=======================================================:+
 | Format     | - Fixed length instructions                     | - Variable length instructions                          |
 |            | - Simple encoding                               | - Common instructions are shorter                       |
 |            | - e.g ARM 4 bytes                               | - Special instructions are longer                       |
