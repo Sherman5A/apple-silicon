@@ -27,6 +27,23 @@ documentation.
 
 # Reduced Instruction Set Computers & Complex Instruction Set Computers
 
++------------+-------------------------------------------------+---------------------------------------------------------+
+|            | RISC                                            | CISC                                                    |
++============+=================================================+=========================================================+
+| Format     | - Fixed length instructions                     | - Variable length instructions                          |
+|            | - Simple encoding                               | - Common instructions are shorter                       |
+|            | - e.g ARM 4 bytes                               | - Special instructions are longer                       |
+|            |                                                 | - e.g x86 1 byte to 16 bytes long                       |
++------------+-------------------------------------------------+---------------------------------------------------------+
+| Operations | - Simple operations                             | - Transcedental functions                               |
+|            | - Single cycle instructions                     | - Multicycle instructions                               |
++------------+-------------------------------------------------+---------------------------------------------------------+
+| Operands   | - Memory and logical instructions are separate  | - Logical instructions operands can be memory addresses |
+|            | - Few addressing modes                          | - Many addressing modes                                 |
++------------+-------------------------------------------------+---------------------------------------------------------+
+
+Table: Summary of RISC and CISC Principles [@power-struggles]
+
 All of the following processor families belong to two distinct computer architectures,
 reduced instruction set computers (RISC), and complex instruction set computers
 (CISC). These design philosophies affect the families architectures and
@@ -34,8 +51,9 @@ operation greatly; therefore, the two philosophies principles and differences mu
 be explored to better analyse the families details, differences, and practices.
 
 As defined by John Mashey [-@risc-userpages], a contributor to the MIPS RISC
-architecture [@john-mashey], most RISC architectures have: a load then store
-architecture - 'no operations that combine load/store with arithmetic i.e., like
+architecture [@john-mashey], most RISC architectures have: a load-store
+model that separates instructions into distinct memory access and logical operations -
+'no operations that combine load/store with arithmetic i.e., like
 add from memory, or add to memory', no more than one operand that accesses a
 memory address per instruction, standard fixed instruction sizes, simple
 encoding, and a small amount of address modes. Crucially, the number of
