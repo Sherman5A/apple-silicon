@@ -73,7 +73,7 @@ Though RISC and CISC processors prioritise different design principles, neither
 are inherently more efficient, designed for mobile, or faster. These
 characteristics are affected far more by the design of the processor and its
 microarchitecture; not the instruction set architecture. et AL [-@power-struggles]
-conducted a study comparing 4 processors, 2 implementing the ARM ISA and 2
+conducted a study comparing 4 contemporary processors, 2 implementing the ARM ISA and 2
 implementing x86, finding that 'Balancing power and performance leads to
 energy-efficient cores, regardless of the ISA: A9 (ARM) and Atom (x86-64)
 processor energy requirements are within 24% of each other and use up to 50%
@@ -82,6 +82,27 @@ different performance and efficiency goals and that is reflected far more
 in their core designs than ISA.
 
 # PowerPC
+
+![PowerPC Genealogy [@powerpc-hist]](images/powerpc-gena.png)
+
+PowerPC originated with IBM's creation of the 801 processor. It was an experimental
+design that used many of RISC's principles, although RISC architecture had
+not been created yet, making 801 the first RISC processor [@ibm-risc-evo]. IBM 801
+was designed to manage large scale telephone switching. Therefore the design was
+specialised, needless instructions were removed, with fixed width instructions,
+load store architecture and other RISC design principles. The switching project
+was cancelled in 1975 however, the 801's potential as a general-purpose,
+high-performance processor was promising. The research from the IBM 801 was
+further developed. The 801 was scalar, designed to execute one instruction every
+cycle, however dervied processors had three independent execution units:
+a branch processor, a fixed-point processor, and a floating-point processor.
+Multiple instructions could be executed per cycle, making the processor
+superscalar, also known as instruction-level parallelism [@system-6000-arch].
+These developments evolved into the IBM RISC System/6000, using an ISA dubbed
+POWER.
+
+POWERPC POWER HUNGRY - REAFFIRMING THE STATEMENT MADE EARLIER, ITS ABOUT
+PROCESSOR DESIGN, NOT INSTRUCTION ARCHITECTURE
 
 # Intel
 
