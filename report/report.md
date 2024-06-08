@@ -90,19 +90,28 @@ design that used many of RISC's principles, although RISC architecture had
 not been created yet, making 801 the first RISC processor [@ibm-risc-evo]. IBM 801
 was designed to manage large scale telephone switching. Therefore the design was
 specialised, needless instructions were removed, with fixed width instructions,
-load store architecture and other RISC design principles. The switching project
-was cancelled in 1975 however, the 801's potential as a general-purpose,
-high-performance processor was promising. The research from the IBM 801 was
-further developed. The 801 was scalar, designed to execute one instruction every
-cycle, however dervied processors had three independent execution units:
-a branch processor, a fixed-point processor, and a floating-point processor.
+load store architecture and other RISC design principles [@801-computer].
+The switching project was cancelled in 1975 however, the 801's potential as a
+general-purpose, high-performance processor was promising. The research from
+the IBM 801 was further developed. The 801 was scalar, designed to execute
+one instruction every cycle, however derived processors had three independent
+execution units: a branch, fixed-point, and floating-point processors.
 Multiple instructions could be executed per cycle, making the processor
 superscalar, also known as instruction-level parallelism [@system-6000-arch].
 These developments evolved into the IBM RISC System/6000, using an ISA dubbed
-POWER.
+POWER. Meanwhile, Apple's CPU supplier, Motorolla, was struggling to provide
+compeitive 68000 series processors whilst Microsoft-Intel based PCs were
+highly compeitive; therefore, Apple started experimenting with RISC processors
+in the Aquarius project [@powerpc-history]. Noticing this,
+IBM offered Apple an opportunity to create a family of POWER processors
+to use in Apple's desktops. Apple proceeded to include Motorolla in the
+agreement due to their long relationship, and Motorolla's experience in
+large-scale processor manufacturing. The result was the Apple IBM, Motorolla
+allicenace, AIM.
 
 POWERPC POWER HUNGRY - REAFFIRMING THE STATEMENT MADE EARLIER, ITS ABOUT
 PROCESSOR DESIGN, NOT INSTRUCTION ARCHITECTURE
+application demand was low so software was not made for it except for MacOS
 
 # Intel
 
