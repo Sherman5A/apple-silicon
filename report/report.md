@@ -99,7 +99,9 @@ execution units: a branch, fixed-point, and floating-point processors.
 Multiple instructions could be executed per cycle, making the processor
 superscalar, also known as instruction-level parallelism [@system-6000-arch].
 These developments evolved into the IBM RISC System/6000, using an ISA dubbed
-POWER. Meanwhile, Apple's CPU supplier, Motorola, was struggling to provide
+POWER.
+
+Meanwhile, Apple's CPU supplier, Motorola, was struggling to provide
 competitive 68000 series processors whilst Microsoft-Intel based PCs were
 highly competitive; therefore, Apple started experimenting with RISC processors
 in the Aquarius project [@powerpc-history]. Noticing this,
