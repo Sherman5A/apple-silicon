@@ -99,19 +99,49 @@ execution units: a branch, fixed-point, and floating-point processors.
 Multiple instructions could be executed per cycle, making the processor
 superscalar, also known as instruction-level parallelism [@system-6000-arch].
 These developments evolved into the IBM RISC System/6000, using an ISA dubbed
-POWER. Meanwhile, Apple's CPU supplier, Motorolla, was struggling to provide
-compeitive 68000 series processors whilst Microsoft-Intel based PCs were
-highly compeitive; therefore, Apple started experimenting with RISC processors
+POWER. Meanwhile, Apple's CPU supplier, Motorola, was struggling to provide
+competitive 68000 series processors whilst Microsoft-Intel based PCs were
+highly competitive; therefore, Apple started experimenting with RISC processors
 in the Aquarius project [@powerpc-history]. Noticing this,
 IBM offered Apple an opportunity to create a family of POWER processors
-to use in Apple's desktops. Apple proceeded to include Motorolla in the
-agreement due to their long relationship, and Motorolla's experience in
-large-scale processor manufacturing. The result was the Apple IBM, Motorolla
-allicenace, AIM.
+to use in Apple's desktops. Apple proceeded to include Motorola in the
+agreement due to their long relationship, and Motorola's experience in
+large-scale processor manufacturing. The result was the Apple, IBM, and Motorola
+alliance, AIM.
+
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| Processor   | Year | Clock rate (MHz) | L2 Cache (KB)   | SPECint | SPECfp | Reference                  |
++=============+======+==================+=================+=========+========+============================+
+| Pentium     | 1993 | 66               | 256 (off-chip ) | 65.1    | 63.6   | [@netlib-pentium]          |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| PPC 603     | 1994 | 66               | 256 (off-chip ) | 60.6    | 60.7   | [@netlib-603]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| PPC 601     | 1993 | 66               | None            | 62.6    | 76.1   | [@netlib-601]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| PPC 604     | 1994 | 120              | 1024 (off-chip) | 118.1   | 150.4  | [@netlib-604]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| Pentium     | 1995 | 120              | 1024 (off-chip) | 108.4   | 172.2  | [@netlib-pentium-120]      |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| Pentium Pro | 1995 | 150              | 256 (off-chip)  | 274.3   | 209.8  | [@netlib-pentium-pro]      |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+
+Table: SPEC 92 Benchmark Results for PowerPC and Intel Processors [@netlib]
+
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| Processor   | Year | Clock rate (MHz) | L2 Cache (KB)   | SPECint | SPECfp | Reference                  |
++=============+======+==================+=================+=========+========+============================+
+| PPC 604 Pro | 1993 | 66               | 256 (off-chip ) | 65.1    | 63.6   | [@netlib-pentium]          |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| Pentium Pro | 1994 | 66               | 256 (off-chip ) | 60.6    | 60.7   | [@netlib-603]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| PPC 604e    | 1993 | 66               | None            | 62.6    | 76.1   | [@netlib-601]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
+
+Table: SPEC 95 Benchmark Results for PowerPC and Intel Processors [@mac-info]
 
 POWERPC POWER HUNGRY - REAFFIRMING THE STATEMENT MADE EARLIER, ITS ABOUT
 PROCESSOR DESIGN, NOT INSTRUCTION ARCHITECTURE
-application demand was low so software was not made for it except for MacOS
+application demand was low so software was not made for it except for macOS
 
 # Intel
 
