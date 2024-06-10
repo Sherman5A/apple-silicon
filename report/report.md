@@ -114,36 +114,70 @@ alliance, AIM.
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 | Processor   | Year | Clock rate (MHz) | L2 Cache (KB)   | SPECint | SPECfp | Reference                  |
 +=============+======+==================+=================+=========+========+============================+
-| Pentium     | 1993 | 66               | 256 (off-chip ) | 65.1    | 63.6   | [@netlib-pentium]          |
-+-------------+------+------------------+-----------------+---------+--------+----------------------------+
-| PPC 603     | 1994 | 66               | 256 (off-chip ) | 60.6    | 60.7   | [@netlib-603]              |
+| Pentium     | 1993 | 66               | 256 (off-chip)  | 65.1    | 63.6   | [@netlib-pentium]          |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 | PPC 601     | 1993 | 66               | None            | 62.6    | 76.1   | [@netlib-601]              |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
+| PPC 603     | 1994 | 66               | 256 (off-chip)  | 60.6    | 60.7   | [@netlib-603]              |
++-------------+------+------------------+-----------------+---------+--------+----------------------------+
 | PPC 604     | 1994 | 120              | 1024 (off-chip) | 118.1   | 150.4  | [@netlib-604]              |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
-| Pentium     | 1995 | 120              | 1024 (off-chip) | 108.4   | 172.2  | [@netlib-pentium-120]      |
+| Pentium     | 1995 | 120              | 1024 (off-chip) | 172.2   | 108.4  | [@netlib-pentium-120]      |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 | Pentium Pro | 1995 | 150              | 256 (off-chip)  | 274.3   | 209.8  | [@netlib-pentium-pro]      |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 
-Table: SPEC 92 Benchmark Results for PowerPC and Intel Processors [@netlib]
+Table: SPEC 92 Benchmark Results for a selection of PowerPC and Intel Processors [@netlib]
 
-+-------------+------+------------------+-----------------+---------+--------+----------------------------+
-| Processor   | Year | Clock rate (MHz) | L2 Cache (KB)   | SPECint | SPECfp | Reference                  |
-+=============+======+==================+=================+=========+========+============================+
-| PPC 604 Pro | 1993 | 66               | 256 (off-chip ) | 65.1    | 63.6   | [@netlib-pentium]          |
-+-------------+------+------------------+-----------------+---------+--------+----------------------------+
-| Pentium Pro | 1994 | 66               | 256 (off-chip ) | 60.6    | 60.7   | [@netlib-603]              |
-+-------------+------+------------------+-----------------+---------+--------+----------------------------+
-| PPC 604e    | 1993 | 66               | None            | 62.6    | 76.1   | [@netlib-601]              |
-+-------------+------+------------------+-----------------+---------+--------+----------------------------+
++--------------+------+------------------+---------+--------+-------------+
+| Processor    | Year | Clock rate (MHz) | SPECint | SPECfp | Reference   |
++============+=+======+==================+=========+========+=============+
+| PPC 604      | 1994 | 120              | 4.7     | 4.4    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| PPC 603e     | 1994 | 117              | 3.5     | 2.7    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| Pentium      | 1995 | 120              | 3.7     | 2.8    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| Pentium Pro  | 1995 | 150              | 6.1     | 5.4    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| PPC 604e     | 1996 | 166              | 7.7     | 6.3    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| PPC G3 (750) | 1997 | 233              | 11.0    | 8.1    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| Pentium Pro  | 1997 | 200              | 11.0    | 8.1    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
+| Pentium II   | 1997 | 233              | 9.5     | 6.4    | [@mac-info] |
++--------------+------+------------------+---------+--------+-------------+
 
-Table: SPEC 95 Benchmark Results for PowerPC and Intel Processors [@mac-info]
+Table: SPEC 95 Benchmark Results for a selection of PowerPC and Intel Processors [@mac-info]
 
-POWERPC POWER HUNGRY - REAFFIRMING THE STATEMENT MADE EARLIER, ITS ABOUT
-PROCESSOR DESIGN, NOT INSTRUCTION ARCHITECTURE
-application demand was low so software was not made for it except for macOS
+As seen in table two, early PowerPC benchmarked well against
+Intel processors. Initial PowerPC processors, like the 601, were very competitive
+with Pentiums, beating them in floating-point performance whilst losing in
+integer benchmarks. However, the Pentiums were running at a far higher wattage than comparable
+PowerPC processors, the 66 MHz 601 dissipated seven watts whereas the 66 MHz Pentium
+dissipated thirteen watts resulting in 85% more power consumption [@power-mac-book].
+However, The PowerPC 603 is a major anomaly; the 66 MHz Pentium performs better in
+integer and floating-point performance. This is because, 603 was designed as
+a portable processor, drawing 3 watts and sacrificing features. Moreover, poor
+Motorola 68000 emulation combined with early, emulation-reliant macOS led to
+poor stability and performance [@power-mac-book]. PowerPC continued to remain
+competitive in performance throughout the AIM alliances life. However, it
+never saw major usage in the Intel-Microsoft dominated PC market, therefore,
+third-party application support and infrastructure was lacking external of macOS.
+Apart from Apple customers, the architecture was ignored [@powerpc-to-intel].
+Furthermore, complications arose within the AIM alliance; Motorla exited the
+processor industry, creating Freescale Semiconductor, and IBM started to focus
+on PowerPC in game consoles, complicating the alliance.
+Moreover, the PowerPC G5, depsite great benchmarks, struggled to meet Apple's demands.
+Steve Jobs explained at WWDC [-@jobs-intel], 'Now, I stood up here two years
+ago in front of you and I promised you [a 3 GHz Power Macintosh G5], and we
+haven't been able to deliver that to you yet. I think a lot of you would like a
+G5 in your PowerBook and we haven't been able to deliver that to you yet'.
+AIM was unable to take the G5, a high-performance desktop processor, and
+scale it upwards towards 3GHz, or downwards to meet laptop efficieny targets.
+In the growing laptop market, this convinced Apple to transition to
+Intel, which who offered the mobile Core series.
 
 # Intel
 
