@@ -69,7 +69,7 @@ was retroactively defined to mean non-RISC[@john-mashey]. However, a typical CIS
 would have: variable length instructions, more addressing modes such as indirect
 addressing, and instructions that require multiple processor cycles [@power-struggles].
 
-Though RISC and CISC processors prioritise different design principles, neither
+Though RISC and CISC processors prioritise different design principles, today neither
 are inherently more efficient, designed for mobile, or faster. These
 characteristics are affected far more by the design of the processor and its
 microarchitecture; not the instruction set architecture. et AL [-@power-struggles]
@@ -166,20 +166,39 @@ competitive in performance throughout the AIM alliances life. However, it
 never saw major usage in the Intel-Microsoft dominated PC market, therefore,
 third-party application support and infrastructure was lacking external of macOS.
 Apart from Apple customers, the architecture was ignored [@powerpc-to-intel].
-Furthermore, complications arose within the AIM alliance; Motorla exited the
+Furthermore, complications arose within the AIM alliance; Motorola exited the
 processor industry, creating Freescale Semiconductor, and IBM started to focus
 on PowerPC in game consoles, complicating the alliance.
-Moreover, the PowerPC G5, depsite great benchmarks, struggled to meet Apple's demands.
+Moreover, the PowerPC G5, despite great benchmarks, struggled to meet Apple's demands.
 Steve Jobs explained at WWDC [-@jobs-intel], 'Now, I stood up here two years
 ago in front of you and I promised you [a 3 GHz Power Macintosh G5], and we
 haven't been able to deliver that to you yet. I think a lot of you would like a
 G5 in your PowerBook and we haven't been able to deliver that to you yet'.
 AIM was unable to take the G5, a high-performance desktop processor, and
-scale it upwards towards 3GHz, or downwards to meet laptop efficieny targets.
+scale it upwards towards GHz, or downwards to meet laptop efficiency targets.
 In the growing laptop market, this convinced Apple to transition to
 Intel, which who offered the mobile Core series.
 
 # Intel
+
+Most of Intel's contemporary processors use the CISC Intel 64 instruction set;
+Intel's' implementation of x86-64 ISA which is a 64 bit extension to x86. x86
+has a long history, originating in 1978 when Intel released the 8086 and 8088,
+the two first x86 processors. The 8086 8088 were 16-bit processors, with, the
+8088 being a cheaper alternative using a reduced data bus [@intel-timeline]. The
+8088 caught the attention of IBM, a business computer system manufacturer who
+wanted to enter the growing consumer microcomputer market. IBM, who typically
+designed all their hardware, used the Intel 8088 due to the competitive price
+and time pressure. The IBM PC greatly exceeded sales expectations. Due to the
+use of third-party components, after reverse-engineering the PC's firmware
+clones of the PC arose [@ibm-pc]. These also used Intel processors, growing
+Intel into an industry giant. Intel continued improving x86 throughout the
+eighties, adding 32-bit support, on-processor cache, and superscalar processing
+to x86. However, the RISC philosophy's popularity was increasing, with RISC
+designs outperforming CISC. Despite this, Intel further invested into the CISC
+x86, creating the Pentium Pro's P6 microarchitecture. P6 has been the basis
+for nearly all of Intel's future processors, including Intel Core, Atom, Pentium
+and Celeron, except Pentium 4.
 
 # AMD
 
