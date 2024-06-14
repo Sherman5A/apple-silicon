@@ -127,7 +127,7 @@ alliance, AIM.
 | Pentium Pro | 1995 | 150              | 256 (off-chip)  | 274.3   | 209.8  | [@netlib-pentium-pro]      |
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 
-Table: SPEC 92 Benchmark Results for a selection of PowerPC and Intel Processors [@netlib]
+Table: SPEC 92 Base Benchmark Results for a selection of PowerPC and Intel Processors [@netlib]
 
 +--------------+------+------------------+---------+--------+-------------+
 | Processor    | Year | Clock rate (MHz) | SPECint | SPECfp | Reference   |
@@ -149,7 +149,7 @@ Table: SPEC 92 Benchmark Results for a selection of PowerPC and Intel Processors
 | Pentium II   | 1997 | 233              | 9.5     | 6.4    | [@mac-info] |
 +--------------+------+------------------+---------+--------+-------------+
 
-Table: SPEC 95 Benchmark Results for a selection of PowerPC and Intel Processors [@mac-info]
+Table: SPEC 95 Peak Benchmark Results for a selection of PowerPC and Intel Processors [@mac-info]
 
 As seen in table two, early PowerPC benchmarked well against
 Intel processors. Initial PowerPC processors, like the 601, were very competitive
