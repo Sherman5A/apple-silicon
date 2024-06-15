@@ -193,16 +193,129 @@ and time pressure. The IBM PC greatly exceeded sales expectations. Due to the
 use of third-party components, after reverse-engineering the PC's firmware
 clones of the PC arose [@ibm-pc]. These also used Intel processors, growing
 Intel into an industry giant. Intel continued improving x86 throughout the
-eighties, adding 32-bit support, on-processor cache, and superscalar processing
-to x86. However, the RISC philosophy's popularity was increasing, with RISC
-designs outperforming CISC. Despite this, Intel further invested into the CISC
-x86, creating the Pentium Pro's P6 microarchitecture. P6 has been the basis
-for nearly all of Intel's future processors, including Intel Core, Atom, Pentium
-and Celeron, except Pentium 4.
+eighties, adding 32-bit support in the 80386, on-processor cache, an integrated
+maths coprocessor, and instruction pipelining in the 80486
+[@intel-over-the-years; @upgrading-repairing-pcs], and superscalar processing in
+the Pentium . In the 14 years between 8088 and Pentium, Intel had increased the
+speed of x86 by 300 times [@intel-timeline]. However, the RISC philosophy's
+popularity was increasing, with RISC designs outperforming CISC. Despite this,
+Intel further invested into the CISC x86, creating the Pentium Pro's P6
+microarchitecture. To improve pipelining and avoid wasting clock cycles, P6
+splits its CISC instructions into smaller RISC-like fixed-length micro-operations
+These operations are executed out-of-order and in parallel to avoid stalling
+when fetching memory, and achieve superscalar execution [@intel-operations]. P6's concepts have
+been used as a basis for future x86 microarchitectures including, Intel Core; Atom;
+Pentium, excluding Pentium 4; and Celeron. Many further developments have been
+made. 64-bit support was added in Merom after AMD's success at extending x86
+to 64-bit x86. Simultaneous multithreading (SMT) is a technique where a
+superscalar processor's core(s) execute multiple independent processes (threads)
+simultaneously. When a thread stalls its resources are used by other threads,
+reducing wasted cycles and resources. SMT, called Hyper-Threading by Intel, was
+added in the Nehalem microarchitecture. Most recently, [@intel-hybrid].
+
+P6 has remained the basis for nearly all of Intel's future
+processors, including Intel Core, Atom, Pentium and Celeron, except Pentium 4.
 
 # AMD
 
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Processor           | µArchitecture | Year | Clock rate (MHz) | Cost ($) | Benchmark       | Result | Reference         |
++=====================+===============+======+==================+==========+=================+========+===================+
+| AMD Athlon          | K7            | 1999 | 650              | 699      | SPECint95       | 27.5   | [@mac-info]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | SPECfp95        | 23.2   | [@mac-info]       |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Pentium III         | P6            | 1999 | 550              | 700      | SPECint95       | 22.3   | [@mac-info]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | SPECflt95       | 15.1   | [@mac-info]       |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| AMD Athlon          | K7            | 1999 | 800              | ~800     | SPECflt95       | 35.0   | [@mac-info]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | SPECint95       | 25.4   | [@mac-info]       |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Pentium III/E       | P6            | 1999 | 800              | 851      | SPECint95       | 38.3   | [@mac-info]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | SPECflt95       | 24.5   | [@mac-info]       |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| AMD Athlon 64 FX-51 | K8            | 2003 | 2200             | 733      | PC Mark 2004    | 4177   | [@2004-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Pentium 4 Extreme   | NetBurst      | 2003 | 3200             | 925      | PC Mark 2004    | 4854   | [@2004-cpu-charts]|
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | PC Mark 2005    | 4169   | [@2005-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Athlon 64 X2 3800+  | K8            | 2005 | 2000             | 354      | PC Mark 2005    | 3769   | [@2005-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Pentium D 830       | NetBurst      | 2005 | 3000             | 316      | PC Mark 2005    | 4955   | [@2005-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Core 2 Duo E6850    | Core          | 2007 | 3000             | 266      | PC Mark 2005    | 7648   | [@2008-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Phenom X4 9500      | K10           | 2007 | 2200             | 283      | PC Mark 2005    | 6509   | [@2008-cpu-charts]|
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Core i5-2500K       | Sandy Bridge  | 2011 | 3300             | 216      | Cinebench R10   | 20381  | [@anadtech]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Cinebench R10   | 5860   | [@anadtech]       |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| FX-8150             | Bulldozer     | 2011 | 3600             | 245      | Cinebench R10   | 20254  | [@anadtech]       |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Cinebench R10   | 3938   | [@anadtech]       |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Core i5-7600        | Kaby Lake     | 2017 | 3000             | 213      | Geekbench 6     | 1380   | [@geekbench]      |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Geekbench 6     | 3825   | [@geekbench]      |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Ryzen 5 1600        | Zen 1         | 2017 | 2200             | 219      | Geekbench 6     | 1070   | [@geekbench]      |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Geekbench 6     | 4582   | [@geekbench]      |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Core i5-10600       | Comet Lake    | 2020 | 3300             | 213      | Geekbench 6     | 6205   | [@geekbench]      |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Geekbench 6     | 1587   | [@geekbench]      |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+| Ryzen 5 5600        | Zen 3         | 2020 | 3500             | 199      | Geekbench 6     | 8554   | [@geekbench]      |
+|                     |               |      |                  |          +-----------------+--------+-------------------+
+|                     |               |      |                  |          | Geekbench 6     | 2023   | [@geekbench]      |
+|                     |               |      |                  |          | Single Threaded |        |                   |
++---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
+
+Table: Comparison of Intel & AMDs In-House Processors with Similar Realease Costs and Years
+
 # Apple Silicon ARM
+
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+| Processor           | µArchitecture | TDP (Watts)      | Benchmark       | Result | Reference         |
++=====================+===============+==================+=================+========+===================+
+| Ryzen 5 5600        | Zen 1         | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                  |-----------------+--------+-------------------+
+|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                  | Single Threaded |        |                   |
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+| Core i5-13500       | Sandy Bridge  | 3000             | Geekbench 6     | 7648   | [@geekbench]      |
+|                     |               |                  |-----------------+--------+-------------------+
+|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                  | Single Threaded |        |                   |
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+| Apple M1            | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                  |-----------------+--------+-------------------+
+|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                  | Single Threaded |        |                   |
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+| Apple M1 Pro        | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                  |-----------------+--------+-------------------+
+|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                  | Single Threaded |        |                   |
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+| Apple M1 Max        | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                  |-----------------+--------+-------------------+
+|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                  | Single Threaded |        |                   |
++---------------------+---------------+------------------+-----------------+--------+-------------------+
+
+Table: Comparison of Apple M1 to 2020 AMD and Intel Processors with Similar TDPs
 
 # Conclusion
 
