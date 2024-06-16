@@ -167,8 +167,8 @@ never saw major usage in the Intel-Microsoft dominated PC market, therefore,
 third-party application support and infrastructure was lacking external of macOS.
 Apart from Apple customers, the architecture was ignored [@powerpc-to-intel].
 Furthermore, complications arose within the AIM alliance; Motorola exited the
-processor industry, creating Freescale Semiconductor, and IBM started to focus
-on PowerPC in game consoles, complicating the alliance.
+processor industry, creating Freescale Semiconductor, and IBM's focus was
+PowerPC in servers and game consoles, not desktops; the alliance was strained.
 Moreover, the PowerPC G5, despite great benchmarks, struggled to meet Apple's demands.
 Steve Jobs explained at WWDC [-@jobs-intel], 'Now, I stood up here two years
 ago in front of you and I promised you [a 3 GHz Power Macintosh G5], and we
@@ -207,14 +207,15 @@ when fetching memory, and achieve superscalar execution [@intel-operations]. P6'
 been used as a basis for future x86 microarchitectures including, Intel Core; Atom;
 Pentium, excluding Pentium 4; and Celeron. Many further developments have been
 made. 64-bit support was added in Merom after AMD's success at extending x86
-to 64-bit x86. Simultaneous multithreading (SMT) is a technique where a
+to 64-bit x86. Simultaneous multithreading (SMT), called Hyper-Threading by
+Intel, was added in the Nehalem microarchitecture. SMT is a technique where a
 superscalar processor's core(s) execute multiple independent processes (threads)
 simultaneously. When a thread stalls its resources are used by other threads,
-reducing wasted cycles and resources. SMT, called Hyper-Threading by Intel, was
-added in the Nehalem microarchitecture. Most recently, [@intel-hybrid].
+reducing wasted cycles and resources. Morevoer, Intel started to produce ultra-low
+power processors for use in netbooks or embedded applications.
 
-P6 has remained the basis for nearly all of Intel's future
-processors, including Intel Core, Atom, Pentium and Celeron, except Pentium 4.
+After difficultuies with
+
 
 # AMD
 
@@ -251,14 +252,14 @@ processors, including Intel Core, Atom, Pentium and Celeron, except Pentium 4.
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
 | Phenom X4 9500      | K10           | 2007 | 2200             | 283      | PC Mark 2005    | 6509   | [@2008-cpu-charts]|
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
-| Core i5-2500K       | Sandy Bridge  | 2011 | 3300             | 216      | Cinebench R10   | 20381  | [@anadtech]       |
+| Core i5-2500K       | Sandy Bridge  | 2011 | 3300             | 216      | Cinebench R10   | 20381  | @anandtech-fx     |
 |                     |               |      |                  |          +-----------------+--------+-------------------+
-|                     |               |      |                  |          | Cinebench R10   | 5860   | [@anadtech]       |
+|                     |               |      |                  |          | Cinebench R10   | 5860   | @anandtech-fx     |
 |                     |               |      |                  |          | Single Threaded |        |                   |
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
-| FX-8150             | Bulldozer     | 2011 | 3600             | 245      | Cinebench R10   | 20254  | [@anadtech]       |
+| FX-8150             | Bulldozer     | 2011 | 3600             | 245      | Cinebench R10   | 20254  | @anandtech-fx     |
 |                     |               |      |                  |          +-----------------+--------+-------------------+
-|                     |               |      |                  |          | Cinebench R10   | 3938   | [@anadtech]       |
+|                     |               |      |                  |          | Cinebench R10   | 3938   | @anandtech-fx     |
 |                     |               |      |                  |          | Single Threaded |        |                   |
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
 | Core i5-7600        | Kaby Lake     | 2017 | 3000             | 213      | Geekbench 6     | 1380   | [@geekbench]      |
@@ -286,34 +287,34 @@ Table: Comparison of Intel & AMDs In-House Processors with Similar Realease Cost
 
 # Apple Silicon ARM
 
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
-| Processor           | µArchitecture | TDP (Watts)      | Benchmark       | Result | Reference         |
-+=====================+===============+==================+=================+========+===================+
-| Ryzen 5 5600        | Zen 1         | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
-|                     |               |                  |-----------------+--------+-------------------+
-|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
-|                     |               |                  | Single Threaded |        |                   |
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
-| Core i5-13500       | Sandy Bridge  | 3000             | Geekbench 6     | 7648   | [@geekbench]      |
-|                     |               |                  |-----------------+--------+-------------------+
-|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
-|                     |               |                  | Single Threaded |        |                   |
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
-| Apple M1            | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
-|                     |               |                  |-----------------+--------+-------------------+
-|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
-|                     |               |                  | Single Threaded |        |                   |
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
-| Apple M1 Pro        | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
-|                     |               |                  |-----------------+--------+-------------------+
-|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
-|                     |               |                  | Single Threaded |        |                   |
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
-| Apple M1 Max        | M1            | 2200             | Geekbench 6     | 6509   | [@geekbench]      |
-|                     |               |                  |-----------------+--------+-------------------+
-|                     |               |                  | Geekbench 6     | 3938   | [@geekbench]      |
-|                     |               |                  | Single Threaded |        |                   |
-+---------------------+---------------+------------------+-----------------+--------+-------------------+
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
+| Processor           | µArchitecture | Power Draw (Watts) | Benchmark       | Result | Reference         |
++=====================+===============+====================+=================+========+===================+
+| Ryzen 5 5600        | Zen 1         | 2200               | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                    |-----------------+--------+-------------------+
+|                     |               |                    | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                    | Single Threaded |        |                   |
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
+| Core i5-13500       | Sandy Bridge  | 3000               | Geekbench 6     | 7648   | [@geekbench]      |
+|                     |               |                    |-----------------+--------+-------------------+
+|                     |               |                    | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                    | Single Threaded |        |                   |
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
+| Apple M1            | Firestorm     | -                  | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                    |-----------------+--------+-------------------+
+|                     |               |                    | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                    | Single Threaded |        |                   |
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
+| Apple M1 Pro        | Firestorm     | 2200               | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                    |-----------------+--------+-------------------+
+|                     |               |                    | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                    | Single Threaded |        |                   |
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
+| Apple M1 Max        | Firestorm     | 2200               | Geekbench 6     | 6509   | [@geekbench]      |
+|                     |               |                    |-----------------+--------+-------------------+
+|                     |               |                    | Geekbench 6     | 3938   | [@geekbench]      |
+|                     |               |                    | Single Threaded |        |                   |
++---------------------+---------------+--------------------+-----------------+--------+-------------------+
 
 Table: Comparison of Apple M1 to 2020 AMD and Intel Processors with Similar TDPs
 
