@@ -220,7 +220,7 @@ After difficultuies with
 # AMD
 
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
-| Processor           | µ-Architecture| Year | Clock rate (MHz) | Cost ($) | Benchmark       | Result | Reference         |
+| Processor           | µarch         | Year | Clock rate (MHz) | Cost ($) | Benchmark       | Result | Reference         |
 +=====================+===============+======+==================+==========+=================+========+===================+
 | AMD Athlon          | K7            | 1999 | 650              | 699      | SPECint95       | 27.5   | @mac-info         |
 |                     |               |      |                  |          +-----------------+--------+-------------------+
@@ -288,7 +288,7 @@ Table: Comparison of Intel & AMDs In-House Processors with Similar Realease Cost
 # Apple Silicon ARM
 
 +---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Processor           | µ-Architecture| Power Draw (Watts) | Benchmark       | Result | Reference         |
+| Processor           | µarch         | Power Draw (Watts) | Benchmark       | Result | Reference         |
 +=====================+===============+====================+=================+========+===================+
 | Ryzen 5 5600        | Zen 1         | 2200               | Geekbench 6     | 6509   | @geekbench        |
 |                     |               |                    +-----------------+--------+-------------------+
