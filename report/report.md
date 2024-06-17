@@ -219,14 +219,14 @@ for laptop efficiency, Apple would transition to Intel processors in 2006,
 fully completing the move transfer by late 2007 [@jobs-intel. As seen in
 Table 4, Intel processors at the time were very competitive in
 productivity, an area that Apple targetted heavily. New MacBooks and
-iMacs would use the dual-core Core Duo, a large imrpovement on
+iMacs would use the dual-core Core Duo, a large improvement on
 single-core Pentium-M. Anandtech [-@core-duo] states, 'for a notebook
 processor, the Core Duo will be nothing short of amazing for professionals.
 Looking at the performance improvements offered everywhere from media
 encoding to 3D rendering, you're going to be able to do a lot more on
 your notebook than you originally thought possible'. Developments in
 mobile processors expanded the capabilities of MacBooks to equal their
-desktop equivalents. Similary to PowerPC, relations with Intel started
+desktop equivalents. Similarly to PowerPC, relations with Intel started
 to strain. First, Apple desired to use Intel modems in their smartphones;
 however, in 2017 Intel's modems suffered technical issues, requiring
 multiple redesigns, delaying the project, missing deadlines, and
@@ -247,7 +247,7 @@ lines, decided to transition from Intel to in-house Apple Silicon.
 Similarly to Intel, AMD uses the x86 ISA. This because of AMD and Intel's
 continued cross-licensing deals. In 1975 AMD manufactured a clone of the
 Intel 8080, creating the Am9080. Intel and AMD proceeded to enter a
-formal cross-licenceing agreemnt for Intel's processor patents in 1976.
+formal cross-licencing agreement for Intel's processor patents in 1976.
 The partnership continued when IBM offered to use Intel processors in
 the IBM PC, with the condition that Intel licence manufacturing of their
 CPU's to a second-source to ensure competition and ample supply. This
@@ -258,7 +258,7 @@ technology exchange began in 1982 [@litigation]. AMD proceeded to create
 clones of the Intel 8086, 80186, and 80286. Though, the agreement
 strained when Intel denied AMD access to its latest 80386 processor
 designs. Instead, AMD reverse-engineered the processors, producing
-the AM386. Discovering this, Intel began litigation. However, AMD
+the Am386. Discovering this, Intel began litigation. However, AMD
 won the case, allowing them to sell Am386, a widely popular CPU which
 truly competed with Intel [@31-years-86]. However, AMD could no longer
 use Intel microcode and microarchitectures.
