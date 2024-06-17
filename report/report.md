@@ -167,7 +167,7 @@ never saw major usage in the Intel-Microsoft dominated PC market, therefore,
 third-party application support and infrastructure was lacking external of macOS.
 Apart from Apple customers, the architecture was ignored [@powerpc-to-intel].
 Furthermore, complications arose within the AIM alliance; Motorola exited the
-processor industry, creating Freescale Semiconductor, and IBM's focus was
+processor industry, creating Freescale Semiconductor, and IBM's focus was on
 PowerPC in servers and game consoles, not desktops; the alliance was strained.
 Moreover, the PowerPC G5, despite great benchmarks, struggled to meet Apple's demands.
 Steve Jobs explained at WWDC [-@jobs-intel], 'Now, I stood up here two years
@@ -243,6 +243,25 @@ having already developed processors for their iPhone and Apple Watch
 lines, decided to transition from Intel to in-house Apple Silicon.
 
 # AMD
+
+Similarly to Intel, AMD uses the x86 ISA. This because of AMD and Intel's
+continued cross-licensing deals. In 1975 AMD manufactured a clone of the
+Intel 8080, creating the Am9080. Intel and AMD proceeded to enter a 
+formal cross-licenceing agreemnt for Intel's processor patents in 1976.
+The partnership continued when IBM offered to use Intel processors in
+the IBM PC, with the condition that Intel licence manufacturing of their
+CPU's to a second-source to ensure competition and ample supply. This
+time, Intel and AMD's agreement was more comprehensive; they could both
+licence produce each other's product, providing they agree to
+exchange the production rights of a product of similar status. The
+technology exchange began in 1982 [@litigation]. AMD proceeded to create
+clones of the Intel 8086, 80186, and 80286. Though, the agreement
+strained when Intel denied AMD access to its latest 80386 processor
+designs. Instead, AMD reverse-engineered the processors, producing
+the AM386. Discovering this, Intel began litigation. However, AMD
+won the case, allowing them to sell Am386, a widely popular CPU which
+truly competed with Intel [@31-years-86]. However, AMD could no longer
+use Intel microcode and microarchitectures.
 
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
 | Processor           | µarch         | Year | Clock rate (MHz) | Cost ($) | Benchmark       | Result | Reference         |
