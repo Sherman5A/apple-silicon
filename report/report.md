@@ -214,39 +214,39 @@ simultaneously. When a thread stalls its resources are used by other threads,
 reducing wasted cycles and resources. Moreover, Intel started to produce ultra-low
 power processors for use in netbooks or embedded applications.
 
-After difficulties with scaling PowerPC further for higher clocks, and down 
+After difficulties with scaling PowerPC further for higher clocks, and down
 for laptop efficiency, Apple would transition to Intel processors in 2006,
-fully completing the move transfer by late 2007 [@jobs-intel. As seen in 
-Table 4, Intel processors at the time were very competitive in 
-productivity, an area that Apple targetted heavily. New MacBooks and 
-iMacs would use the dual-core Core Duo, a large imrpovement on 
-single-core Pentium-M. Anandtech [-@core-duo] states, 'for a notebook 
+fully completing the move transfer by late 2007 [@jobs-intel. As seen in
+Table 4, Intel processors at the time were very competitive in
+productivity, an area that Apple targetted heavily. New MacBooks and
+iMacs would use the dual-core Core Duo, a large imrpovement on
+single-core Pentium-M. Anandtech [-@core-duo] states, 'for a notebook
 processor, the Core Duo will be nothing short of amazing for professionals.
-Looking at the performance improvements offered everywhere from media 
-encoding to 3D rendering, you're going to be able to do a lot more on 
-your notebook than you originally thought possible'. Developments in 
+Looking at the performance improvements offered everywhere from media
+encoding to 3D rendering, you're going to be able to do a lot more on
+your notebook than you originally thought possible'. Developments in
 mobile processors expanded the capabilities of MacBooks to equal their
-desktop equivalents. Similary to PowerPC, relations with Intel started 
-to strain. First, Apple desired to use Intel modems in their smartphones; 
-however, in 2017 Intel's modems suffered technical issues, requiring 
-multiple redesigns, delaying the project, missing deadlines, and 
-generating anxiety for Apple's executives [@intel-modem]. 
+desktop equivalents. Similary to PowerPC, relations with Intel started
+to strain. First, Apple desired to use Intel modems in their smartphones;
+however, in 2017 Intel's modems suffered technical issues, requiring
+multiple redesigns, delaying the project, missing deadlines, and
+generating anxiety for Apple's executives [@intel-modem].
 Furthermore, Intel proceeded to encounter large supply issues
-in 2018 and 2019, forcing them to prioritise high performance Xeon and 
-i9 / i7 processors instead of their lower-end offerings 
-[@intel-cpu-shortages]. Apple suffered from these shortages, 'For your 
-Mac business overall we faced some processor constraints in the March 
-quarter, leading to a 5 percent revenue decline compared to last year. 
-But we believe that our Mac revenue would have been up compared to 
-last year without these constraints' [@apple-q2-2019]. Therefore, Apple, 
-having already developed processors for their iPhone and Apple Watch 
+in 2018 and 2019, forcing them to prioritise high performance Xeon and
+i9 / i7 processors instead of their lower-end offerings
+[@intel-cpu-shortages]. Apple suffered from these shortages, 'For your
+Mac business overall we faced some processor constraints in the March
+quarter, leading to a 5 percent revenue decline compared to last year.
+But we believe that our Mac revenue would have been up compared to
+last year without these constraints' [@apple-q2-2019]. Therefore, Apple,
+having already developed processors for their iPhone and Apple Watch
 lines, decided to transition from Intel to in-house Apple Silicon.
 
 # AMD
 
 Similarly to Intel, AMD uses the x86 ISA. This because of AMD and Intel's
 continued cross-licensing deals. In 1975 AMD manufactured a clone of the
-Intel 8080, creating the Am9080. Intel and AMD proceeded to enter a 
+Intel 8080, creating the Am9080. Intel and AMD proceeded to enter a
 formal cross-licenceing agreemnt for Intel's processor patents in 1976.
 The partnership continued when IBM offered to use Intel processors in
 the IBM PC, with the condition that Intel licence manufacturing of their
