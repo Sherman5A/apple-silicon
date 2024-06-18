@@ -181,42 +181,36 @@ Intel, which offered the mobile Core series.
 
 # Intel
 
-Most of Intel's contemporary processors use the CISC Intel 64 instruction set;
-Intel's' implementation of x86-64 ISA which is a 64 bit extension to x86. x86
-has a long history, originating in 1978 when Intel released the 8086 and 8088,
-the two first x86 processors. The 8086 8088 were 16-bit processors, with, the
-8088 being a cheaper alternative using a reduced data bus [@intel-timeline]. The
-8088 caught the attention of IBM, a business computer system manufacturer who
-wanted to enter the growing consumer microcomputer market. IBM, who typically
-designed all their hardware, used the Intel 8088 due to the competitive price
-and time pressure. The IBM PC greatly exceeded sales expectations. Due to the
-use of third-party components, after reverse-engineering the PC's firmware
-clones of the PC arose [@ibm-pc]. These also used Intel processors, growing
-Intel into an industry giant. Intel continued improving x86 throughout the
+Intel's contemporary processors use a 64-bit extension of x86. x86
+originating in 1978 when Intel released the 16-bit 8086, using x86.
+Also released, the 8088, a cheaper alternative [@intel-timeline]. The 8088
+caught IBM's attention who wanted to enter the growing consumer microcomputer
+market. IBM, typically designed all their hardware, but used the Intel 8088
+due to the competitive price and time pressure. The PC Greatly exceeded sales expectations, and
+underwent reverse-engineering, leading to clones [@ibm-pc]. The popularity grew Intel
+into an industry giant. x86 was continuously improved throughout the
 eighties, adding 32-bit support in the 80386, on-processor cache, an integrated
 maths coprocessor, and instruction pipelining in the 80486
 [@intel-over-the-years; @upgrading-repairing-pcs], and superscalar processing in
 the Pentium . In the 14 years between 8088 and Pentium, Intel had increased the
 speed of x86 by 300 times [@intel-timeline]. However, the RISC philosophy's
-popularity was increasing, with RISC designs outperforming CISC. Despite this,
-Intel further invested into the CISC x86, creating the Pentium Pro's P6
+popularity was increasing, RISC designs outperformed CISC. Despite this,
+Intel further invested into x86, creating the Pentium Pro's P6
 microarchitecture. To improve pipelining and avoid wasting clock cycles, P6
-splits its CISC instructions into smaller RISC-like fixed-length micro-operations
-These operations are executed out-of-order and in parallel to avoid stalling
-when fetching memory, and achieve superscalar execution [@intel-operations]. P6's concepts have
-been used as a basis for future x86 microarchitectures including, Intel Core; Atom;
-Pentium, excluding Pentium 4; and Celeron. Many further developments have been
-made. 64-bit support was added in Merom after AMD's success at extending x86
-to 64-bit x86. Simultaneous multithreading (SMT), called Hyper-Threading by
-Intel, was added in the Nehalem microarchitecture. SMT is a technique where a
+split CISC instructions into several RISC-like fixed-length micro-operations
+These operations are executed out-of-order and in parallel to avoid stalling,
+and achieve superscalar execution [@intel-operations]. P6's has been used as
+a basis for future x86 microarchitectures, Intel Core; Atom;
+Pentium, excluding Pentium 4; and Celeron.  64-bit support was added in Merom
+after AMD's success at a 64-bit extension. Simultaneous multithreading (SMT),
+branded Hyper-Threading, was added in the Nehalem microarchitecture. SMT when a
 superscalar processor's core(s) execute multiple independent processes (threads)
 simultaneously. When a thread stalls its resources are used by other threads,
-reducing wasted cycles and resources. Moreover, Intel started to produce ultra-low
-power processors for use in netbooks or embedded applications.
+reducing wasted cycles and resources.
 
-After difficulties with scaling PowerPC further for higher clocks, and down
-for laptop efficiency, Apple would transition to Intel processors in 2006,
-fully completing the move transfer by late 2007 [@jobs-intel]. As seen in
+After difficulties scaling PowerPC towards higher clocks, and down
+for mobile efficiency, Apple would transition to Intel processors in 2006,
+completing the transfer by late 2007 [@jobs-intel]. As seen in
 Table 4, Intel processors at the time were very competitive in
 productivity, an area that Apple targetted heavily. New MacBooks and
 iMacs would use the dual-core Core Duo, a large improvement on
@@ -226,21 +220,19 @@ Looking at the performance improvements offered everywhere from media
 encoding to 3D rendering, you're going to be able to do a lot more on
 your notebook than you originally thought possible'. Developments in
 mobile processors expanded the capabilities of MacBooks to equal their
-desktop equivalents. Similarly to PowerPC, relations with Intel started
-to strain. First, Apple desired to use Intel modems in their smartphones;
-however, in 2017 Intel's modems suffered technical issues, requiring
-multiple redesigns, delaying the project, missing deadlines, and
-generating anxiety for Apple's executives [@intel-modem].
-Furthermore, Intel proceeded to encounter large supply issues
-in 2018 and 2019, forcing them to prioritise high performance Xeon and
-i9 / i7 processors instead of their lower-end offerings
-[@intel-cpu-shortages]. Apple suffered from these shortages, 'For your
-Mac business overall we faced some processor constraints in the March
-quarter, leading to a 5 percent revenue decline compared to last year.
-But we believe that our Mac revenue would have been up compared to
-last year without these constraints' [@apple-q2-2019]. Therefore, Apple,
-having already developed processors for their iPhone and Apple Watch
-lines, decided to transition from Intel to in-house Apple Silicon.
+desktop equivalents. Similarly to PowerPC, relations with Intel deteriorated.
+First, Apple desired to use Intel modems in their smartphones;
+however, in 2017 the modems suffered issues, requiring multiple redesigns,
+delaying the project, and disappointing Apple's executives [@intel-modem].
+Furthermore, Intel encountered supply issues in 2018 and 2019,
+forcing prioritisation of high performance Xeon and i9 / i7 processors
+instead of lower-end offerings [@intel-cpu-shortages]. Apple suffered from
+these shortages, 'For our Mac business overall we faced some processor
+constraints in the March quarter, leading to a 5 percent revenue decline
+compared to last year. But we believe that our Mac revenue would have been
+up compared to last year without these constraints' [@apple-q2-2019].
+Therefore, Apple, having developed processors for their iPhone and
+Apple Watch lines, decided to transition to in-house Apple Silicon.
 
 # AMD
 
