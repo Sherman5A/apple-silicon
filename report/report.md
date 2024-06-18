@@ -216,7 +216,7 @@ power processors for use in netbooks or embedded applications.
 
 After difficulties with scaling PowerPC further for higher clocks, and down
 for laptop efficiency, Apple would transition to Intel processors in 2006,
-fully completing the move transfer by late 2007 [@jobs-intel. As seen in
+fully completing the move transfer by late 2007 [@jobs-intel]. As seen in
 Table 4, Intel processors at the time were very competitive in
 productivity, an area that Apple targetted heavily. New MacBooks and
 iMacs would use the dual-core Core Duo, a large improvement on
@@ -244,24 +244,65 @@ lines, decided to transition from Intel to in-house Apple Silicon.
 
 # AMD
 
-Similarly to Intel, AMD uses the x86 ISA. This because of AMD and Intel's
-continued cross-licensing deals. In 1975 AMD manufactured a clone of the
-Intel 8080, creating the Am9080. Intel and AMD proceeded to enter a
-formal cross-licencing agreement for Intel's processor patents in 1976.
-The partnership continued when IBM offered to use Intel processors in
-the IBM PC, with the condition that Intel licence manufacturing of their
-CPU's to a second-source to ensure competition and ample supply. This
-time, Intel and AMD's agreement was more comprehensive; they could both
-licence produce each other's product, providing they agree to
-exchange the production rights of a product of similar status. The
-technology exchange began in 1982 [@litigation]. AMD proceeded to create
+Similarly to Intel, AMD uses the x86 ISA because their continued 
+cross-licensing deals. In 1975, AMD manufactured a clone of the
+Intel 8080, creating the Am9080. They proceeded to enter a
+cross-licencing agreement for Intel's patents in 1976.
+The partnership continued when IBM offered to use Intel's processors in
+the IBM PC, with the condition that Intel licence manufacturing to a
+second-source to ensure competition and ample supply. The IBM deal, was more
+comprehensive; Intel and AMD could both licence produce each other's product,
+providing they exchange the production rights of a product with similar status.
+The technology exchange began in 1982 [@litigation] and AMD proceeded to create
 clones of the Intel 8086, 80186, and 80286. Though, the agreement
-strained when Intel denied AMD access to its latest 80386 processor
+strained when AMD was denied access to Intel's latest 80386 processor
 designs. Instead, AMD reverse-engineered the processors, producing
-the Am386. Discovering this, Intel began litigation. However, AMD
-won the case, allowing them to sell Am386, a widely popular CPU which
-truly competed with Intel [@31-years-86]. However, AMD could no longer
-use Intel microcode and microarchitectures.
+the Am386. Intel began litigation. However, AMD won the case,
+allowing them to sell Am386, a widely popular CPU which truly competed with
+Intel [@31-years-86]. However, AMD could no longer use Intel's future designs.
+AMD's next processor, the K5 was AMD's first fully in-house design.
+Similar to the P6, AMD's microarchitecture split CISC instructions into
+several RISC-like micro-operations to achieve better superscalar and
+out-of-order processing. However, the chip experienced many delays and design
+issues. However, after redesigns and revisions, the K5 was competitive
+with the Pentium, though weaker in floating-point applications like games
+[@anandtech-k5]. K6, AMD's next architecture, release was more successful;
+AMD continued to compete however, AMD still suffered in floating-point heavy
+programs [@anandtech-k6]. However, AMD K7 broke the streak. As shown table 4,
+the floating-point unit improved considerably, competing with Intel in floating
+points operations at 18% of the cost. Moreover, K7's integer performance was
+very competitive at its price. A 650 MHz K7 outperformed a Pentium III 550 MHz
+by 27.5%. AMD then created K8, the first 64-bit extension to x86. K8 maintained
+compatibility with 32-bit and 16-bit x86, therefore no software migration was
+necessary. Intel 64-bit implementation, Itanium, was not backwards
+compatible with x86, and Itanium's complex compiler and software requirements
+limited software availability to enterprise servers. Therefore, Intel was
+forced to adopt AMD's 64-bit extension. Yet again, K8 was competitive with
+Intel, competing very well in gaming and 3D applications, but suffering in
+productivity as seen on Table 4 [@athlon-fx-pentium-4]. K10 introduced
+dual-core processor to AMD's lineup, but continued K8's trend, remaining
+competitive in gaming, but performing worse in productivity. AMD's next
+next microarchitecture called Bulldozer completely was an entirely new design.
+Bulldozer used clustered multithreading (CMT), a technique with similar intentions to
+SMT. In SMT, each core has its own execution resources and frontend
+(fetch and decode process). Two threads are assigned to the core's execution resources.
+However, in CMT a core consists of 2 modules, each with one thread. The modules
+have their own integer units, address units and level 1 cache, however the modules
+share the frontend, floating-point units, and level 2 cache. [@anandtech-fx]
+Bulldozer performed badly as it required highly-threaded workloads to perform
+well, as observed in the Cinebench R10 single threaded benchmarks in table 4.
+Finally, AMD's latest microarchitecture family Zen marks a return
+to competition. Zen 1 is complete departure bulldozer, taking some of the advancements,
+and leaving behind failures. Zen 1 implements SMT, and most notably moves to using
+'core-complexes'. A single core-complex (CCX) has four cores. The processor's
+die can have several (CCXs) that communicate to through a high speed interconnect.
+Then, other necessary components such as memory, and USB controllers are added.
+This allows to AMD to produce low-end four core and high-end 32+ core CPUs using the same
+components. Table 4 shows, Zen 1 is competitive in multithreaded
+scenarios, but lacks in single threaded workloads. Zen 3 made further
+improvements, competing in both.
+
+Apple
 
 +---------------------+---------------+------+------------------+----------+-----------------+--------+-------------------+
 | Processor           | µarch         | Year | Clock rate (MHz) | Cost ($) | Benchmark       | Result | Reference         |
@@ -331,36 +372,41 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 
 # Apple Silicon ARM
 
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Processor           | µarch         | Power Draw (Watts) | Benchmark       | Result | Reference         |
-+=====================+===============+====================+=================+========+===================+
-| Ryzen 5 5600        | Zen 1         | 2200               | Geekbench 6     | 6509   | @geekbench        |
-|                     |               |                    +-----------------+--------+-------------------+
-|                     |               |                    | Geekbench 6     | 3938   | @geekbench        |
-|                     |               |                    | Single Threaded |        |                   |
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Core i5-13500       | Sandy Bridge  | 3000               | Geekbench 6     | 7648   | @geekbench        |
-|                     |               |                    +-----------------+--------+-------------------+
-|                     |               |                    | Geekbench 6     | 3938   | @geekbench        |
-|                     |               |                    | Single Threaded |        |                   |
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Apple M1            | Firestorm     | -                  | Geekbench 6     | 6509   | @geekbench        |
-|                     |               |                    +-----------------+--------+-------------------+
-|                     |               |                    | Geekbench 6     | 3938   | @geekbench        |
-|                     |               |                    | Single Threaded |        |                   |
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Apple M1 Pro        | Firestorm     | 2200               | Geekbench 6     | 6509   | @geekbench        |
-|                     |               |                    +-----------------+--------+-------------------+
-|                     |               |                    | Geekbench 6     | 3938   | @geekbench        |
-|                     |               |                    | Single Threaded |        |                   |
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
-| Apple M1 Max        | Firestorm     | 2200               | Geekbench 6     | 6509   | @geekbench        |
-|                     |               |                    +-----------------+--------+-------------------+
-|                     |               |                    | Geekbench 6     | 3938   | @geekbench        |
-|                     |               |                    | Single Threaded |        |                   |
-+---------------------+---------------+--------------------+-----------------+--------+-------------------+
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Processor           | µarch         | Power Draw (Watts) | Benchmark       | Result | Reference             |
++=====================+===============+====================+=================+========+=======================+
+| Ryzen 7 5800U       | Zen 3         | 25                 | Cinebench 23    | 9248   | @amd-5800u            |
+|                     |               +--------------------+-----------------+--------+                       |
+|                     |               | \-                 | Cinebench 23    | \-     |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Ryzen 9 5900HS      | Zen 3         | 35                 | Cinebench 23    | 11024  | @amd-5800u            |
+|                     |               +--------------------+-----------------+--------+                       |
+|                     |               | \-                 | Cinebench 23    | \-     |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Core i9-11980HK     | Tiger Lake    | 82.6               | Cinebench 23    | 12830  | @anandtech-power-draw |
+|                     |               +--------------------+-----------------+--------+                       |
+|                     |               | 30.0               | Cinebench 23    | 1604   |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Apple M1            | Firestorm     | ~26.8 (wall power) | Cinebench 23    | 7833   | @anandtech-m1         |
+|                     | / Icesotrm    |                    +-----------------+--------+                       |
+|                     |               |                    | Cinebench 23    | 1522   |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Apple M1 Pro        | Firestorm     | 2200               | Cinebench 23    | 6509   | @geekbench            |
+|                     | / Icestorm    |                    +-----------------+--------+                       |
+|                     |               |                    | Cinebench 23    | 3938   |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
+| Apple M1 Max        | Firestorm     | 34.0               | Cinebench 23    | 12375  | @anandtech-power-draw |
+|                     | / Icestorm    +--------------------+-----------------+--------+                       |
+|                     |               | 11.0               | Cinebench 23    | 1529   |                       |
+|                     |               |                    | Single Threaded |        |                       |
++---------------------+---------------+--------------------+-----------------+--------+-----------------------+
 
-Table: Comparison of Apple M1 Family to 2020 AMD and Intel Processors with Similar Power Draws
+Table: Comparison of Apple M1 Family to 2020 AMD and Intel Processors
 
 # Conclusion
 
