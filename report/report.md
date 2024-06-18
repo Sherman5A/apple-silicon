@@ -85,31 +85,28 @@ in their core designs than ISA.
 
 ![PowerPC Genealogy [@powerpc-hist]](images/powerpc-gena.png)
 
-PowerPC originated with IBM's creation of the 801 processor. It was an experimental
-design that used many of RISC's principles, although RISC architecture had
-not been created yet, making 801 the first RISC processor [@ibm-risc-evo]. IBM 801
-was designed to manage large scale telephone switching. Therefore the design was
-specialised, needless instructions were removed, with fixed width instructions,
-load store architecture and other RISC design principles [@801-computer].
-The switching project was cancelled in 1975 however, the 801's potential as a
-general-purpose, high-performance processor was promising. The research from
-the IBM 801 was further developed. The 801 was scalar, designed to execute
-one instruction every cycle, however derived processors had three independent
-execution units: a branch, fixed-point, and floating-point processors.
+PowerPC traces back to IBM's creation of the 801 processor. It was an experimental
+design that used many RISC's principles, though the  philosophy had
+not been created yet, making 801 amongst the first RISC processors [@ibm-risc-evo].
+IBM 801 was a specialised design for telephone switching, needless instructions
+were removed, and insutrctions were fixed-width, using load store architecture
+and other RISC principles [@801-computer]. The project was cancelled in 1975
+however, the 801's potential as a general-purpose processor was promising.
+IBM 801's reserach was developed further. Originally 801 was scalar, executing
+one instruction every cycle, however future processors used three independent
+execution units: a branch, fixed-point, and floating-point processor.
 Multiple instructions could be executed per cycle, making the processor
 superscalar, also known as instruction-level parallelism [@system-6000-arch].
-These developments evolved into the IBM RISC System/6000, using an ISA dubbed
+The developments became IBM RISC System/6000, using an ISA dubbed
 POWER.
 
-Meanwhile, Apple's CPU supplier, Motorola, was struggling to provide
-competitive 68000 series processors whilst Microsoft-Intel based PCs were
-highly competitive; therefore, Apple started experimenting with RISC processors
-in the Aquarius project [@powerpc-history]. Noticing this,
-IBM offered Apple an opportunity to create a family of POWER processors
-to use in Apple's desktops. Apple proceeded to include Motorola in the
-agreement due to their long relationship, and Motorola's experience in
-large-scale processor manufacturing. The result was the Apple, IBM, and Motorola
-alliance, AIM.
+Meanwhile, Apple's CPU supplier, Motorola, struggled to provide competitive
+68000 series processors amidst competitive Microsoft-Intel PCs. Therefore,
+Apple started experimenting with RISC in the Aquarius project [@powerpc-history].
+Noticing this, IBM offered Apple to create a family of POWER processors to use in
+desktops. Apple also included Motorola in the agreement due to their long relationship,
+and Motorola's experience in processor manufacturing. The result was the Apple,
+IBM, and Motorola alliance, AIM.
 
 +-------------+------+------------------+-----------------+---------+--------+----------------------------+
 | Processor   | Year | Clock rate (MHz) | L2 Cache (KB)   | SPECint | SPECfp | Reference                  |
@@ -151,33 +148,31 @@ Table: SPEC 92 Base Benchmark Results for a selection of PowerPC and Intel Proce
 
 Table: SPEC 95 Peak Benchmark Results for a selection of PowerPC and Intel Processors [@mac-info]
 
-As seen in table two, early PowerPC benchmarked well against
-Intel processors. Initial PowerPC processors, like the 601, were very competitive
-with Pentiums, beating them in floating-point performance whilst losing in
-integer benchmarks. However, the Pentiums were running at a far higher wattage than comparable
-PowerPC processors, the 66 MHz 601 dissipated seven watts whereas the 66 MHz Pentium
-dissipated thirteen watts resulting in 85% more power consumption [@power-mac-book].
-However, The PowerPC 603 is a major anomaly; the 66 MHz Pentium performs better in
-integer and floating-point performance. This is because, 603 was designed as
-a portable processor, drawing 3 watts and sacrificing features. Moreover, poor
-Motorola 68000 emulation combined with early, emulation-reliant macOS led to
-poor stability and performance [@power-mac-book]. PowerPC continued to remain
-competitive in performance throughout the AIM alliances life. However, it
-never saw major usage in the Intel-Microsoft dominated PC market, therefore,
-third-party application support and infrastructure was lacking external of macOS.
-Apart from Apple customers, the architecture was ignored [@powerpc-to-intel].
-Furthermore, complications arose within the AIM alliance; Motorola exited the
-processor industry, creating Freescale Semiconductor, and IBM's focus was on
-PowerPC in servers and game consoles, not desktops; the alliance was strained.
-Moreover, the PowerPC G5, despite great benchmarks, struggled to meet Apple's demands.
-Steve Jobs explained at WWDC [-@jobs-intel], 'Now, I stood up here two years
+Table two shows PowerPC benchmarking well against Intel processors.
+The 601 was very competitive with Pentiums, having better floating-point
+performance whilst suffering in integer workloads. However,
+the Pentiums were running at higher wattages than comparable PowerPC processors.
+The 66 MHz 601 dissipated seven watts compared to the 66 MHz Pentium's
+thirteen watts, resulting in 85% more power consumption [@power-mac-book].
+The PowerPC 603, performing worse than the pentium in both workloads, is a
+major anomaly due to its design as a portable processor, drawing only
+three watts and sacrificing features [@power-mac-book]. PowerPC's performance
+remained competitive throughout the AIM alliance's life. However, PowerPC
+saw little usage in the Intel-Microsoft dominated PC market, therefore,
+third-party applications and infrastructure were lacking outside of macOS.
+Apart from Apple's customers, PowerPC was largely ignored [@powerpc-to-intel].
+Moreover, complications arose within the AIM; Motorola exited the
+processor industry, creating Freescale Semiconductor, and IBM's focus drifted
+from desktops to severs; the alliance was strained. Moreover, the PowerPC G5,
+despite benchmarking well, struggled to meet Apple's demands. Steve Jobs
+states at WWDC [-@jobs-intel], 'Now, I stood up here two years
 ago in front of you and I promised you [a 3 GHz Power Macintosh G5], and we
 haven't been able to deliver that to you yet. I think a lot of you would like a
 G5 in your PowerBook and we haven't been able to deliver that to you yet'.
 AIM was unable to take the G5, a high-performance desktop processor, and
 scale it upwards towards GHz, or downwards to meet laptop efficiency targets.
 In the growing laptop market, this convinced Apple to transition to
-Intel, which offered the mobile Core series.
+Intel, who offered the efficient mobile Core series.
 
 # Intel
 
