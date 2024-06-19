@@ -19,11 +19,11 @@ World Wide Developers Conference (WWDC) 2020 [@apple-announcement]. This report 
 explore the transition's motives and results through investigating
 the history and characteristics of other contemporary processor families,
 comparing them to Apple's M1 series. Information was sourced mainly through
-seconday-literature, such as, academic reports, press releases, news articles.
-The report found a common reason for Apples's processor transitions, supply issues
-and dissatistication with processor performance or direction. Apple's move to
-in-house designs provides htem with control over both issues. Furthermore, in-house
-processors suit Apple's control over hardware and software, acheiving futher
+secondary-literature, such as, academic reports, press releases, news articles.
+The report found a common reason for Apple's processor transitions, supply issues
+and dissatisfaction with processor performance or direction. Apple's move to
+in-house designs provides them with control over both issues. Furthermore, in-house
+processors suit Apple's control over hardware and software, achieving further
 vertical integration.
 
 # Reduced Instruction Set Computers & Complex Instruction Set Computers
@@ -89,10 +89,10 @@ PowerPC traces back to IBM's creation of the 801 processor. It was an experiment
 design that used many RISC's principles, though the  philosophy had
 not been created yet, making 801 amongst the first RISC processors [@ibm-risc-evo].
 IBM 801 was a specialised design for telephone switching, needless instructions
-were removed, and insutrctions were fixed-width, using load store architecture
+were removed, and instructions were fixed-width, using load store architecture
 and other RISC principles [@801-computer]. The project was cancelled in 1975
 however, the 801's potential as a general-purpose processor was promising.
-IBM 801's reserach was developed further. Originally 801 was scalar, executing
+IBM 801's research was developed further. Originally 801 was scalar, executing
 one instruction every cycle, however future processors used three independent
 execution units: a branch, fixed-point, and floating-point processor.
 Multiple instructions could be executed per cycle, making the processor
@@ -366,7 +366,7 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 |                     |               |                    | Single Threaded |        |                       |
 +---------------------+---------------+--------------------+-----------------+--------+-----------------------+
 | Apple M1            | Firestorm     | ~26.8 (wall power) | Cinebench 23    | 7833   | @anandtech-m1         |
-|                     | / Icesotrm    |                    +-----------------+--------+                       |
+|                     | / Icestorm    |                    +-----------------+--------+                       |
 |                     |               |                    | Cinebench 23    | 1522   |                       |
 |                     |               |                    | Single Threaded |        |                       |
 +---------------------+---------------+--------------------+-----------------+--------+-----------------------+
@@ -405,7 +405,7 @@ year as M1. In smaller technology nodes electrons travel shorter
 distances, increasing efficiency, and performance at the expense of cost
 [@semiconductor-process]. Furthermore, the microarchitecture targets efficiency.
 Each Firestorm core uses an eight-wide decoder, allowing decoding of eight
-instructions per clock. This was the widest decoder available in commerical
+instructions per clock. This was the widest decoder available in commercial
 industry; AMD and Intel's decoders were only four-wide. Continuing
 the wide design, Firestorm's out-of-order reorder buffer (ROB) stores 630
 instructions. Intel and AMD's ROBs store 352 and 256 instructions respectively.
@@ -416,29 +416,29 @@ and, four load-store units are used. Compared to Zen 3, Firestorm has two
 more logic units and an extra load-store [@anandtech-zen-3; @firestorm-arch],
 raising instructions per clock. To support this, Firestorm's cache is large,
 192 KB of instruction cache compared to Zen 3's 32 KB. Level 2 cache
-typically exceeeds Zen 3 at lower core counts. However, level 3 cache is around
+typically exceeds Zen 3 at lower core counts. However, level 3 cache is around
 equal [@anandtech-firestorm; @anandtech-zen-3]. Overall, Firestorm has high
 instructions-per-clock, that run at lower clock rates, resulting in high
-efficieny. However, the design's high width and large cache decreases yields
+efficiency. However, the design's high width and large cache decreases yields
 from fabrication plants, increasing costs. The costs are mitigated
 through Apple's vertical integration.
 
 The design's effects are shown in table 5, the M1 Max outperforms AMD's Ryzen 9
 by 16% at one watt lower power draw. Though the M1 Max benchmarked ~3.5% lower
 than the i9, it consumed 41% of the i9's power. M1's power consumption
-was higher than typical as the test used a Mac Mini and indepdentent processor
+was higher than typical as the test used a Mac Mini and independent processor
 consumption was not measured. However, it still competes well against the Ryzen 7,
 a processor created later.
 
 # Conclusion
 
 Apple has transitioned to new processors three times, each time due to supply
-issues and dissatisifaction with performance. However, Apple silicon provides
+issues and dissatisfaction with performance. However, Apple silicon provides
 Apple with complete control over their hardware, processor supply, and its direction.
 Apple now controls all aspects of their devices in a vertical business model
 that allows for creation of competitive processors combined with specialised
 specialised towards them. This solves Apple's issues with third-party processors.
-The statements above show a clear rationalse for Apple's move to in-house desktop
+The statements above show a clear rationale for Apple's move to in-house desktop
 and laptop processors.
 
 # Bibliography
