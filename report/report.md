@@ -15,16 +15,16 @@ nocite: |
 
 Apple announced their two year transition plan to internally-designed Apple
 Silicon processors, ending the use of Intel x86-64 processors, at the
-World Wide Developers Conference 2020 [@apple-announcement]. This report will
+World Wide Developers Conference (WWDC) 2020 [@apple-announcement]. This report will
 explore the transition's motives and results through investigating
 the history and characteristics of other contemporary processor families,
-comparing them to Apple's M1 series. Information was sourced through academic
-reports, press releases, news articles, and the processor designer's
-documentation.
-
-**RESULTS to add**
-
-**CONCLUSIONS to add**
+comparing them to Apple's M1 series. Information was sourced mainly through
+seconday-literature, such as, academic reports, press releases, news articles.
+The report found a common reason for Apples's processor transitions, supply issues
+and dissatistication with processor performance or direction. Apple's move to
+in-house designs provides htem with control over both issues. Furthermore, in-house
+processors suit Apple's control over hardware and software, acheiving futher
+vertical integration.
 
 # Reduced Instruction Set Computers & Complex Instruction Set Computers
 
@@ -345,7 +345,7 @@ scenarios, and later versions, compete in both.
 
 Table: Comparison of Intel & AMD's In-House Processors with Similar Release Costs and Years
 
-# Apple Silicon ARM
+# Apple Silicon
 
 +---------------------+---------------+--------------------+-----------------+--------+-----------------------+
 | Processor           | µarch         | Power Draw (Watts) | Benchmark       | Result | Reference             |
@@ -370,11 +370,6 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 |                     |               |                    | Cinebench 23    | 1522   |                       |
 |                     |               |                    | Single Threaded |        |                       |
 +---------------------+---------------+--------------------+-----------------+--------+-----------------------+
-| Apple M1 Pro        | Firestorm     | 2200               | Cinebench 23    | 6509   | @geekbench            |
-|                     | / Icestorm    |                    +-----------------+--------+                       |
-|                     |               |                    | Cinebench 23    | 3938   |                       |
-|                     |               |                    | Single Threaded |        |                       |
-+---------------------+---------------+--------------------+-----------------+--------+-----------------------+
 | Apple M1 Max        | Firestorm     | 34.0               | Cinebench 23    | 12375  | @anandtech-power-draw |
 |                     | / Icestorm    +--------------------+-----------------+--------+                       |
 |                     |               | 11.0               | Cinebench 23    | 1529   |                       |
@@ -383,6 +378,67 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 
 Table: Comparison of Apple M1 Family to 2020 AMD and Intel Processors
 
+Apple silicon started with the 2008 acquisition of fabless semiconductor
+company P.A. Semi, a creator of efficient Power ISA processors. Apple then
+acquired an architectural licence from ARM, granting Apple usage of ARM ISA
+without using ARM's processor core designs. Apple used the acquisition and
+licence for to create system on chips (SOCs) for iPhones, iPads, and other
+low-power products. Intel's supply struggles provided Apple with the opportunity
+for almost-complete vertical integration of their laptop and desktop processors.
+Thus, in WWDC [@apple-announcement] the 'M' processor series was announced.
+As stated in the RISC & CISC explanation, in contemporary processors ISA
+has little affect on efficiency. Instead, microarchitecture design, technology
+node (the size of the transistors), and software integration effect performance
+and efficiency far more, and Apple controls all of those aspects. Furthermore,
+unlike AMD and Intel, Apple's processors are only used in their product;
+therefore, the processors can use expensive designs and technology, absorbing
+extra costs into the end-product. AMD and Intel are unable to do this as
+they must profit from processor sales.
+
+![Firestorm Architecture [@firestorm-arch]](images/firestorm.png)
+
+M1, Apple's first "M" family, has three models: M1, M1 Pro, and M1 Max.
+All use Apple's "Firestorm" microarchitectures for performance cores,
+"Icestorm" for efficiency cores, and TSMC's 5 nm technology node. The node was
+cutting-edge technology in 2020, entering non-risky production the same
+year as M1. In smaller technology nodes electrons travel shorter
+distances, increasing efficiency, and performance at the expense of cost
+[@semiconductor-process]. Furthermore, the microarchitecture targets efficiency.
+Each Firestorm core uses an eight-wide decoder, allowing decoding of eight
+instructions per clock. This was the widest decoder available in commerical
+industry; AMD and Intel's decoders were only four-wide. Continuing
+the wide design, Firestorm's out-of-order reorder buffer (ROB) stores 630
+instructions. Intel and AMD's ROBs store 352 and 256 instructions respectively.
+Large ROBs allow storing out-of-order instructions before reordering them
+back to sequential order, avoiding stalling [@anandtech-firestorm]. To
+execute the wide microarchitecture, six logic, four floating-point
+and, four load-store units are used. Compared to Zen 3, Firestorm has two
+more logic units and an extra load-store [@anandtech-zen-3; @firestorm-arch],
+raising instructions per clock. To support this, Firestorm's cache is large,
+192 KB of instruction cache compared to Zen 3's 32 KB. Level 2 cache
+typically exceeeds Zen 3 at lower core counts. However, level 3 cache is around
+equal [@anandtech-firestorm; @anandtech-zen-3]. Overall, Firestorm has high
+instructions-per-clock, that run at lower clock rates, resulting in high
+efficieny. However, the design's high width and large cache decreases yields
+from fabrication plants, increasing costs. The costs are mitigated
+through Apple's vertical integration.
+
+The design's effects are shown in table 5, the M1 Max outperforms AMD's Ryzen 9
+by 16% at one watt lower power draw. Though the M1 Max benchmarked ~3.5% lower
+than the i9, it consumed 41% of the i9's power. M1's power consumption
+was higher than typical as the test used a Mac Mini and indepdentent processor
+consumption was not measured. However, it still competes well against the Ryzen 7,
+a processor created later.
+
 # Conclusion
+
+Apple has transitioned to new processors three times, each time due to supply
+issues and dissatisifaction with performance. However, Apple silicon provides
+Apple with complete control over their hardware, processor supply, and its direction.
+Apple now controls all aspects of their devices in a vertical business model
+that allows for creation of competitive processors combined with specialised
+specialised towards them. This solves Apple's issues with third-party processors.
+The statements above show a clear rationalse for Apple's move to in-house desktop
+and laptop processors.
 
 # Bibliography
