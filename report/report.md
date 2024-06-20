@@ -84,7 +84,7 @@ that is reflected far more in their microarchitecture than ISA.
 
 # PowerPC
 
-![PowerPC Genealogy [@powerpc-hist]](images/powerpc-gena.png)
+![PowerPC Genealogy [@powerpc-hist]](images/powerpc-gena.png){height=30%}
 
 PowerPC traces back to IBM's creation of the 801 processor. It was an experimental
 design that used many RISC's principles, though the  philosophy had
@@ -181,7 +181,7 @@ Intel's contemporary processors use a 64-bit extension of x86. x86
 originating in 1978 when Intel released the 16-bit 8086, using x86.
 Also released, the 8088, a cheaper alternative [@intel-timeline]. The 8088
 caught IBM's attention who wanted to enter the growing consumer microcomputer
-market. IBM typically designed all their hardware, but used the Intel 8088
+market. IBM typically designed all their hardware but used the Intel 8088
 due to the competitive price and time pressure. The PC Greatly exceeded sales expectations, and
 underwent reverse-engineering, leading to clones [@ibm-pc]. The popularity grew Intel
 into an industry giant. x86 was continuously improved throughout the
@@ -244,7 +244,9 @@ clones. Relations strained Intel denied AMD access to the latest 80386 processor
 designs. Instead, AMD reverse-engineered the 80386 and Intel began litigation.
 However, AMD won the case, allowing them to sell the Am386, a widely popular
 CPU which competed with Intel [@31-years-86]. However, AMD could not
-use Intel's future designs. AMD's next processor, the K5 was AMD's first in-house design.
+use Intel's future designs.
+
+AMD's next processor, the K5 was AMD's first in-house design.
 Similar to the Intel P6, AMD's microarchitecture split CISC instructions into
 several RISC-like micro-operations, achieving better superscalar and
 out-of-order processing. However, the processor had design
@@ -348,6 +350,25 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 
 # Apple Silicon
 
+Apple silicon started with the 2008 acquisition of fabless semiconductor
+company P.A. Semi, a creator of efficient Power ISA processors. Apple then
+acquired an architectural licence from ARM, granting Apple usage of ARM ISA
+without using ARM's processor core designs. Apple used the acquisition and
+licence for to create system on chips (SOCs) for iPhones, iPads, and other
+low-power products. Intel's supply struggles provided Apple with the opportunity
+for almost-complete vertical integration of their laptop and desktop processors.
+Thus, in WWDC [@apple-announcement] the 'M' processor series was announced.
+As stated in the RISC & CISC explanation, in contemporary processors ISA
+has little effect on efficiency. Instead, microarchitecture design, technology
+node (the size of the transistors), and software integration effect performance
+and efficiency far more, and Apple controls all these aspects. Furthermore,
+unlike AMD and Intel, Apple's processors are only used in their product;
+therefore, the processors can use expensive designs and technology, absorbing
+extra costs into the end-product. AMD and Intel are unable to do this as
+they must profit from processor sales.
+
+![Firestorm Architecture [@firestorm-arch]](images/firestorm.png)
+
 +---------------------+---------------+--------------------+-----------------+--------+-------------------------+
 | Processor           | µarch         | Power Draw (Watts) | Benchmark       | Result | Reference               |
 +=====================+===============+====================+=================+========+=========================+
@@ -378,25 +399,6 @@ Table: Comparison of Intel & AMD's In-House Processors with Similar Release Cost
 +---------------------+---------------+--------------------+-----------------+--------+-------------------------+
 
 Table: Comparison of Apple M1 Family to 2020 AMD and Intel Processors
-
-Apple silicon started with the 2008 acquisition of fabless semiconductor
-company P.A. Semi, a creator of efficient Power ISA processors. Apple then
-acquired an architectural licence from ARM, granting Apple usage of ARM ISA
-without using ARM's processor core designs. Apple used the acquisition and
-licence for to create system on chips (SOCs) for iPhones, iPads, and other
-low-power products. Intel's supply struggles provided Apple with the opportunity
-for almost-complete vertical integration of their laptop and desktop processors.
-Thus, in WWDC [@apple-announcement] the 'M' processor series was announced.
-As stated in the RISC & CISC explanation, in contemporary processors ISA
-has little effect on efficiency. Instead, microarchitecture design, technology
-node (the size of the transistors), and software integration effect performance
-and efficiency far more, and Apple controls all them aspects. Furthermore,
-unlike AMD and Intel, Apple's processors are only used in their product;
-therefore, the processors can use expensive designs and technology, absorbing
-extra costs into the end-product. AMD and Intel are unable to do this as
-they must profit from processor sales.
-
-![Firestorm Architecture [@firestorm-arch]](images/firestorm.png)
 
 M1, Apple's first "M" family, has three models: M1, M1 Pro, and M1 Max.
 All use Apple's "Firestorm" microarchitectures for performance cores,
