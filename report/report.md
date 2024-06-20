@@ -1,5 +1,5 @@
 ---
-title: "IS1S482 - Analysing Apple's Swap to In-House Silicon Design"
+title: "IS1S482 - Analysing Apple's Swap to In-House Processor Design"
 author: [Jake Real - 23056792]
 date: "20/06/2024"
 toc-own-page: false
@@ -20,9 +20,9 @@ explore the transition's motives and results through investigating
 the history and characteristics of other contemporary processor families,
 comparing them to Apple's M1 series. Information was sourced mainly through
 secondary literature, such as, academic reports, press releases, news articles.
-The report found a common reason for Apple's processor transitions, supply issues
-and dissatisfaction with processor performance or direction. Apple's move to
-in-house designs provides them with control over both issues. Furthermore, in-house
+The report found two common reasons for Apple's processor transitions: supply issues
+and dissatisfaction with processor performance and direction. Apple's move to
+in-house designs allow control over both these issues. Furthermore, in-house
 processors suit Apple's control over hardware and software, achieving further
 vertical integration.
 
@@ -431,7 +431,7 @@ by 16% at one watt lower power draw. Though the M1 Max benchmarked ~3.5% lower
 than the i9, it consumed 41% of the i9's power. M1's power consumption
 was higher than typical as the test used a Mac Mini and independent processor
 consumption was not measured. However, it still competes well against the Ryzen 7,
-a processor created later.
+a processor created later after the M1.
 
 # Conclusion
 
