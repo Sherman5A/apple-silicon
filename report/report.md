@@ -1,7 +1,7 @@
 ---
-title: "IS1S482 A Review of Processor Technologies"
+title: "IS1S482 - Analysing Apple's Swap to In-House Silicon Design"
 author: [Jake Real - 23056792]
-date: "03/06/2024"
+date: "20/06/2024"
 toc-own-page: false
 titlepage: true
 table-use-row-colors: true
@@ -13,13 +13,13 @@ nocite: |
 
 # Abstract
 
-Apple announced their two year transition plan to internally-designed Apple
+Apple announced their two-year transition plan to internally-designed Apple
 Silicon processors, ending the use of Intel x86-64 processors, at the
 World Wide Developers Conference (WWDC) 2020 [@apple-announcement]. This report will
 explore the transition's motives and results through investigating
 the history and characteristics of other contemporary processor families,
 comparing them to Apple's M1 series. Information was sourced mainly through
-secondary-literature, such as, academic reports, press releases, news articles.
+secondary literature, such as, academic reports, press releases, news articles.
 The report found a common reason for Apple's processor transitions, supply issues
 and dissatisfaction with processor performance or direction. Apple's move to
 in-house designs provides them with control over both issues. Furthermore, in-house
@@ -45,41 +45,42 @@ vertical integration.
 
 Table: Summary of RISC and CISC Principles [@power-struggles]
 
-All of the following processor families' have instruction set architectures (ISAs).
-ISAs define how software interfaces with the processors hardware, through specifying
-available instructions, types, addressing modes, and encoding [@isa-def]. The ISAs
-belong to two distinct architectures, reduced instruction set computers (RISC),
+All processor families have instruction set architectures (ISAs).
+ISAs define how software interfaces with the processor's hardware, specifying
+available instructions, types, addressing modes, and encodings [@isa-def]. ISAs
+belong to two architectures, reduced instruction set computers (RISC),
 and complex instruction set computers (CISC). These design philosophies affect
-the families' architecture and operation greatly; therefore, the two philosophies
+the family's architecture and operation greatly; therefore, the two philosophies
 principles and differences must be explored to better analyse the upcoming
 processors details and differences.
 
-As defined by John Mashey [-@risc-userpages], a contributor to the MIPS RISC
-architecture [@john-mashey], most RISC architectures have: a load-store
+John Mashey [-@risc-userpages], a contributor to the MIPS RISC
+architecture [@john-mashey], defines RISC as having: a load-store
 model that separates instructions into distinct memory access and logical operations -
 'no operations that combine load/store with arithmetic i.e., like
 add from memory, or add to memory', no more than one operand that accesses a
 memory address per instruction, standard fixed instruction sizes, simple
-encoding, and a small amount of address modes. Crucially, the number of
-instructions does not determine whether a processor is RISC. Instead, RISC is
-a loose set of architectures, sharing some of the above features, that aim to
-achieve efficient execution by a pipelined processor using an optimising
-compiler [@what-risc]. Whereas, CISC has a looser definition as the term
-was retroactively defined to mean non-RISC[@john-mashey]. However, a typical CISC processor
-would have: variable length instructions, more addressing modes such as indirect
-addressing, and instructions that require multiple processor cycles [@power-struggles].
+encoding, and a small amount of address modes. Crucially, number of
+instructions does not decide if a processor is RISC. Instead, RISC is
+a loose set of architectures designed at a similar time, sharing some
+of the above features, which aim to achieve efficient execution by
+a pipelined processor using an optimising compiler [@what-risc].
+Whereas, CISC's definition is looser as CISC was retroactively
+defined to mean non-RISC [@john-mashey]. However, typical CISC processors
+would have variable length instructions, more addressing modes such as indirect
+addressing, and instructions requiring processor cycles [@power-struggles].
 
-Though RISC and CISC processors prioritise different design principles, today neither
+Though RISC and CISC prioritise different principles. Today, neither
 are inherently more efficient, designed for mobile, or faster. These
-characteristics are affected far more by the design of the processor and its
-microarchitecture; not the instruction set architecture. et AL [-@power-struggles]
-conducted a study comparing 4 contemporary processors, 2 implementing the ARM ISA and 2
-implementing x86, finding that 'Balancing power and performance leads to
-energy-efficient cores, regardless of the ISA: A9 (ARM) and Atom (x86-64)
-processor energy requirements are within 24% of each other and use up to 50%
-less energy than other cores'. Overall, these processors are targeting
-different performance and efficiency goals and that is reflected far more
-in their core designs than ISA.
+characteristics are affected far more by a processor's design and its
+microarchitecture; not the instruction set architecture. @power-struggles
+conducted a study comparing four contemporary processors, two implementing
+ARM ISA and two implementing x86, finding that 'Balancing power and
+performance leads to energy-efficient cores, regardless of the
+ISA: A9 (ARM) and Atom (x86-64) processor energy requirements are
+within 24% of each other and use up to 50% less energy than other cores'.
+Overall, processors target different performance and efficiency goals and
+that is reflected far more in their microarchitecture than ISA.
 
 # PowerPC
 
@@ -89,7 +90,7 @@ PowerPC traces back to IBM's creation of the 801 processor. It was an experiment
 design that used many RISC's principles, though the  philosophy had
 not been created yet, making 801 amongst the first RISC processors [@ibm-risc-evo].
 IBM 801 was a specialised design for telephone switching, needless instructions
-were removed, and instructions were fixed-width, using load store architecture
+were removed, and instructions were fixed width, using load store architecture
 and other RISC principles [@801-computer]. The project was cancelled in 1975
 however, the 801's potential as a general-purpose processor was promising.
 IBM 801's research was developed further. Originally 801 was scalar, executing
@@ -149,12 +150,12 @@ Table: SPEC 92 Base Benchmark Results for a selection of PowerPC and Intel Proce
 Table: SPEC 95 Peak Benchmark Results for a selection of PowerPC and Intel Processors [@mac-info]
 
 Table two shows PowerPC benchmarking well against Intel processors.
-The 601 was very competitive with Pentiums, having better floating-point
+The 601 was very competitive with Pentiums, having Petter floating-point
 performance whilst suffering in integer workloads. However,
 the Pentiums were running at higher wattages than comparable PowerPC processors.
 The 66 MHz 601 dissipated seven watts compared to the 66 MHz Pentium's
 thirteen watts, resulting in 85% more power consumption [@power-mac-book].
-The PowerPC 603, performing worse than the pentium in both workloads, is a
+The PowerPC 603, performing worse than the Pentium in both workloads, is a
 major anomaly due to its design as a portable processor, drawing only
 three watts and sacrificing features [@power-mac-book]. PowerPC's performance
 remained competitive throughout the AIM alliance's life. However, PowerPC
@@ -180,15 +181,15 @@ Intel's contemporary processors use a 64-bit extension of x86. x86
 originating in 1978 when Intel released the 16-bit 8086, using x86.
 Also released, the 8088, a cheaper alternative [@intel-timeline]. The 8088
 caught IBM's attention who wanted to enter the growing consumer microcomputer
-market. IBM, typically designed all their hardware, but used the Intel 8088
+market. IBM typically designed all their hardware, but used the Intel 8088
 due to the competitive price and time pressure. The PC Greatly exceeded sales expectations, and
 underwent reverse-engineering, leading to clones [@ibm-pc]. The popularity grew Intel
 into an industry giant. x86 was continuously improved throughout the
 eighties, adding 32-bit support in the 80386, on-processor cache, an integrated
 maths coprocessor, and instruction pipelining in the 80486
 [@intel-over-the-years; @upgrading-repairing-pcs], and superscalar processing in
-the Pentium . In the 14 years between 8088 and Pentium, Intel had increased the
-speed of x86 by 300 times [@intel-timeline]. However, the RISC philosophy's
+the Pentium. In the 14 years between 8088 and Pentium, Intel had increased
+x86's speed by 300 times [@intel-timeline]. However, the RISC philosophy's
 popularity was increasing, RISC designs outperformed CISC. Despite this,
 Intel further invested into x86, creating the Pentium Pro's P6
 microarchitecture. To improve pipelining and avoid wasting clock cycles, P6
@@ -207,9 +208,9 @@ After difficulties scaling PowerPC towards higher clocks, and down
 for mobile efficiency, Apple would transition to Intel processors in 2006,
 completing the transfer by late 2007 [@jobs-intel]. As seen in
 Table 4, Intel processors at the time were very competitive in
-productivity, an area that Apple targetted heavily. New MacBooks and
-iMacs would use the dual-core Core Duo, a large improvement on
-single-core Pentium-M. Anandtech [-@core-duo] states, 'for a notebook
+productivity, an area that Apple targeted heavily. New MacBooks and
+iMacs would use the dual-core Core Duo, a substantial improvement to the
+single core Pentium-M. Anandtech [-@core-duo] states, 'for a notebook
 processor, the Core Duo will be nothing short of amazing for professionals.
 Looking at the performance improvements offered everywhere from media
 encoding to 3D rendering, you're going to be able to do a lot more on
@@ -237,7 +238,7 @@ AMD reverse-engineered the Intel 8080. However, the partnership changed
 when IBM offered to use Intel's processors in the IBM PC,but had
 Intel to licence manufacturing to a second-source to ensure competition
 and supply. The agreement allowed Intel and AMD to licence produce each
-others product, if they exchanged production rights to a product of similar
+other's product, if they exchanged production rights to a product of similar
 status. This agreement began in 1982 [@litigation] and AMD created various
 clones. Relations strained Intel denied AMD access to the latest 80386 processor
 designs. Instead, AMD reverse-engineered the 80386 and Intel began litigation.
@@ -270,7 +271,7 @@ In CMT a core consists of two modules, each has one thread. A module
 has its own integer, address units and level 1 cache, however they
 share the frontend, and floating-point units [@anandtech-fx].
 Bulldozer performed badly; it required highly-threaded workloads to perform
-well, as observed in table 4's single threaded benchmarks. Finally,
+well, as seen in table 4's single threaded benchmarks. Finally,
 AMD's latest family is Zen. Zen is a completely new design. Zen implements SMT,
 and most notably moves to using 'core-complexes' (CCX). A CCX contains four cores.
 The processor's die can have several (CCXs) that communicate through an interconnect.
@@ -387,9 +388,9 @@ low-power products. Intel's supply struggles provided Apple with the opportunity
 for almost-complete vertical integration of their laptop and desktop processors.
 Thus, in WWDC [@apple-announcement] the 'M' processor series was announced.
 As stated in the RISC & CISC explanation, in contemporary processors ISA
-has little affect on efficiency. Instead, microarchitecture design, technology
+has little effect on efficiency. Instead, microarchitecture design, technology
 node (the size of the transistors), and software integration effect performance
-and efficiency far more, and Apple controls all of those aspects. Furthermore,
+and efficiency far more, and Apple controls all them aspects. Furthermore,
 unlike AMD and Intel, Apple's processors are only used in their product;
 therefore, the processors can use expensive designs and technology, absorbing
 extra costs into the end-product. AMD and Intel are unable to do this as
@@ -418,7 +419,7 @@ raising instructions per clock. To support this, Firestorm's cache is large,
 192 KB of instruction cache compared to Zen 3's 32 KB. Level 2 cache
 typically exceeds Zen 3 at lower core counts. However, level 3 cache is around
 equal [@anandtech-firestorm; @anandtech-zen-3]. Overall, Firestorm has high
-instructions-per-clock, that run at lower clock rates, resulting in high
+instructions-per-clock, which run at lower clock rates, resulting in high
 efficiency. However, the design's high width and large cache decreases yields
 from fabrication plants, increasing costs. The costs are mitigated
 through Apple's vertical integration.
